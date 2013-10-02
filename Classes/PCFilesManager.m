@@ -242,6 +242,7 @@
 	// for the moment we start only with only one file. We'll change that later
 	for(NSString* zipName in tmpList){
         NSLog(@"zipName InTemplist %@ %@ %@", zipName, tmpList, [GGPrivateDoc privateDocsDirectory: FOLDERdownload]);
+        
 		ZipArchive* za				= [[ZipArchive alloc] init];		
 		NSString* filePath			= [[GGPrivateDoc privateDocsDirectory: FOLDERdownload] stringByAppendingPathComponent: zipName];//<-- make a dowload folder instead	
 		NSString* unzipFilesPath	= [GGPrivateDoc privateDocsDirectory: FOLDERtmp]; //<---

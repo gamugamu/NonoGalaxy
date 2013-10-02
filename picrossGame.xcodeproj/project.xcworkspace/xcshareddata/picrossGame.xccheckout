@@ -5,41 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>129D7658-DBB9-4613-9DE6-AD5FD61180D1</string>
+	<string>BCBFD72E-800E-4654-9F25-6829E83D2B59</string>
 	<key>IDESourceControlProjectName</key>
 	<string>picrossGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>9061FCA0-5870-4A03-A67E-8FA59316DAB6</key>
-		<string>https://subversion.assembla.com/svn/nonogalaxy</string>
+		<key>03923AEA-E9FD-415C-9360-F1C88FB4A8A7</key>
+		<string>ssh://github.com/gamugamu/NonoGalaxy.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>picrossGame.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9061FCA0-5870-4A03-A67E-8FA59316DAB6</key>
+		<key>03923AEA-E9FD-415C-9360-F1C88FB4A8A7</key>
 		<string>../..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>9061FCA0-5870-4A03-A67E-8FA59316DAB6</key>
-		<string>https://subversion.assembla.com/svn/nonogalaxy</string>
-	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://subversion.assembla.com/svn/nonogalaxy/picrossGame.xcodeproj</string>
+	<string>ssh://github.com/gamugamu/NonoGalaxy.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9061FCA0-5870-4A03-A67E-8FA59316DAB6</string>
+	<string>03923AEA-E9FD-415C-9360-F1C88FB4A8A7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
-			<string>trunk</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9061FCA0-5870-4A03-A67E-8FA59316DAB6</string>
+			<string>03923AEA-E9FD-415C-9360-F1C88FB4A8A7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>nonogalaxy</string>
 		</dict>
