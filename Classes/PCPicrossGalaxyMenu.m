@@ -91,8 +91,9 @@
 
 
 - (void)animateNewMapAdded:(NSArray*)newMaps{
+    [self setUpAnimation];
 	[self animateHideMapsTable];
-	_animationGalaxyHelper.MrNono	= _MrNono;
+
 	[_animationGalaxyHelper animateNewMapAdded: newMaps intoNode: self nodeSelectorWhenDone: @selector(displayNewMapsDidFinish)];
 }
 
@@ -332,7 +333,6 @@ static bool shouldAnimateConstelationCompleted = NO;
     [_mapsTable updateTable];
 	self.animationGalaxyHelper = nil;
 	[self animateShowMapsTable];
-
 }
 
 
@@ -436,7 +436,8 @@ static bool shouldAnimateConstelationCompleted = NO;
 }
 
 - (void)setUpAnimation{
-    _animationGalaxyHelper	= [PCPicrossGalaxyMenuHelper new];
+    self.animationGalaxyHelper      = [[PCPicrossGalaxyMenuHelper new] autorelease];
+    _animationGalaxyHelper.MrNono	= _MrNono;
 }
 
 #pragma mark setting
@@ -489,7 +490,6 @@ static bool shouldAnimateConstelationCompleted = NO;
 		[self setUpMrNono];
 		[self setUpBackButton];
 		[self setUpRequestInApp];
-        [self setUpAnimation];
 		[self beforeStartAnimating];
 	}
 	return self;

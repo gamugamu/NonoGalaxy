@@ -194,24 +194,22 @@
 
 -(BOOL) UnzipOpenFile:(NSString*) zipFile
 {
+    
     // create an array to receive the list of unzipped files.
-    if (_unzippedFiles) [_unzippedFiles release];
+    if (_unzippedFiles)
+        [_unzippedFiles release];
+    
     _unzippedFiles = [[NSMutableArray alloc] initWithCapacity:1];
     
 	_unzFile = unzOpen( (const char*)[zipFile UTF8String] );
 	if( _unzFile )
 	{
-        printf("not void!\n");
-
 		unz_global_info  globalInfo = {0};
 		if( unzGetGlobalInfo(_unzFile, &globalInfo )== UNZ_OK )
 		{
 			 NSLog(@"%lu entries in the zip file", globalInfo.number_entry);
 		}
-	}else{
-        printf("void! %p %u %u\n", _unzFile, _unzFile!=NULL, _unzFile == NULL);
-    }
-    
+	}
     
 	return _unzFile!=NULL;
 }

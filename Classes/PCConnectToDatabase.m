@@ -56,6 +56,7 @@
 }
 
 - (void)downloadSpecificConstelations:(NSArray*)constelationList{
+    
 	ASINetworkQueue* queue = [[ASINetworkQueue alloc] init];
 	[queue setDelegate: self];
 	[queue setRequestDidFailSelector: @selector(downloadConstelationListFailed:)];
@@ -65,6 +66,7 @@
 		ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: [NSURL URLWithString: GamugamuSpecificConstelationURL]];
 		[request setPostValue: nonoSets forKey: ConstKey];
 		[request setDownloadDestinationPath: [[PCFilesManager sharedPCFileManager] downloadedFiles: nonoSets]];
+        
 		[queue addOperation:request];
 	}
 	[queue go];
@@ -135,7 +137,7 @@
         NSError* error = nil;
         
         uint errorCount = [[PCFilesManager sharedPCFileManager] unzipDownloadedData: &error];
-
+        
         if(error || errorCount)
             [self downloadDone: CDBDownloadError_RequestFailed withMap: nil];
         else

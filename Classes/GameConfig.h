@@ -83,7 +83,7 @@
 
 #if IS_SERVER_MODE
     #define GamugamuConstelatioListURL		@"http://www.adobie.fr/cake_picross/picrosses/constelationslist"
-    #define GamugamuSpecificConstelationURL	@"http://www.adobie.fr/cake_picross/picrosses/constelationslist/specificConstelation"
+    #define GamugamuSpecificConstelationURL	@"http://www.adobie.fr/cake_picross/picrosses/specificConstelation"
 #else
     #define GamugamuConstelatioListURL		@"http://192.168.0.22:8888/picrosses/constelationslist"
     #define GamugamuSpecificConstelationURL	@"http://192.168.0.22:8888/picrosses/specificConstelation"

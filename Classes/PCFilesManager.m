@@ -80,9 +80,7 @@
 
 - (CCTMXTiledMap*)getMap:(NSString*)constelationName{
 	NSString* filePath			= [[GGPrivateDoc privateDocsDirectory: FOLDERmaps] stringByAppendingPathComponent: constelationName];
-	CCTMXTiledMap* map			= [CCTMXTiledMap tiledMapWithTMXFile: filePath andResolvedPath: [[NSBundle mainBundle] resourcePath]];
-    NSLog(@"getMap %@", filePath);
-    
+	CCTMXTiledMap* map			= [CCTMXTiledMap tiledMapWithTMXFile: filePath andResolvedPath: [[NSBundle mainBundle] resourcePath]];    
 	return map;
 }
 
@@ -238,11 +236,8 @@
 	NSMutableArray* tmpList			= [NSMutableArray arrayWithArray: [fileManager  contentsOfDirectoryAtPath: [GGPrivateDoc privateDocsDirectory: FOLDERdownload]
 																										error: nil]];
 	
-	
 	// for the moment we start only with only one file. We'll change that later
 	for(NSString* zipName in tmpList){
-        NSLog(@"zipName InTemplist %@ %@ %@", zipName, tmpList, [GGPrivateDoc privateDocsDirectory: FOLDERdownload]);
-        
 		ZipArchive* za				= [[ZipArchive alloc] init];		
 		NSString* filePath			= [[GGPrivateDoc privateDocsDirectory: FOLDERdownload] stringByAppendingPathComponent: zipName];//<-- make a dowload folder instead	
 		NSString* unzipFilesPath	= [GGPrivateDoc privateDocsDirectory: FOLDERtmp]; //<---
@@ -296,8 +291,9 @@
 										 toPath: [[GGPrivateDoc privateDocsDirectory: folderList[i]] stringByAppendingPathComponent: tmpFile]
 										  error: &copyError];
                     
-                    if(copyError.code == 516) // file already exist.
+                    if(copyError.code == 516){ // file already exist.
                         copyError = nil;
+                    }
 				}
 				
 				// on récupère enfin tout les stages display
@@ -312,8 +308,9 @@
 											  error: &copyError];
 					}
                     
-                    if(copyError.code == 516) // file already exist.
+                    if(copyError.code == 516){ // file already exist.
                         copyError = nil;
+                    }
 				}
 				
 				//if theres is an error, recursively remove the serialisation
