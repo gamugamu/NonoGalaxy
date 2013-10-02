@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>appId</key>
+	<string>503234212</string>
+	<key>title</key>
+	<string>NonoGalaxy</string>
+	<key>vote</key>
+	<string>Vote sur App-Store!</string>
+	<key>message</key>
+	<string>Donne ton avis sur App-Store et nous pourrons au mieux améliorer cette application.</string>
+	<key>confirmLabel</key>
+	<string>Oui, je vote!</string>
+	<key>cancelLabel</key>
+	<string>Plus tard</string>
+	<key>invalidateLabel</key>
+	<string>Noooon! ne me demande plus</string>
+</dict>
+</plist>

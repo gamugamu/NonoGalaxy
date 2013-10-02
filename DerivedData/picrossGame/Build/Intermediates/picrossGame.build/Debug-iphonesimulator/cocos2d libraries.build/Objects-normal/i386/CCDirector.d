@@ -1,0 +1,35 @@
+dependencies: \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCDirector.m \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCDirector.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/ccConfig.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/ccTypes.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/CCGL.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/glu.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/EAGLView.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/ESRenderer.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCScheduler.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Support/uthash.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCActionManager.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCAction.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Support/CCArray.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Support/ccCArray.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCTextureCache.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCLabelAtlas.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCAtlasNode.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCTextureAtlas.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCTexture2D.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/CCNS.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCNode.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCProtocols.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/ccMacros.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/CCDirectorIOS.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCTransition.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCScene.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCSpriteFrameCache.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCSpriteFrame.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCLabelBMFont.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCSpriteBatchNode.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCLayer.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/CCTouchDelegateProtocol.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Support/OpenGL_Internal.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Support/CGPointExtension.h

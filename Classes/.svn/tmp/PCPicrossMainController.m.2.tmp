@@ -1,0 +1,237 @@
+//
+//  PicrossController.m
+//  UsingTiled
+//
+//  Created by loïc Abadie on 05/10/10.
+//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//
+
+#import "PCPicrossMainController.h"
+#import "PCPicrossGalaxyMenu.h"
+#import "PCConstelationMap.h"
+#import "PCPicrossGameFactory.h"
+#import "PCLoader.h"
+#import "PCHomePage.h"
+#import "GCMusicController.h"
+#import "GCTransition.h"
+#import "GameConfig.h"
+
+@interface PCPicrossMainController()<GCMusicControllerDelegate, PCPicrossGameDelegate, PCConstelationMapDelegate, PCPicrossGalaxyMenuDelegate> 
+- (void)startUpScene;
+- (void)eagleContext;
+- (void)changeSceneAsync:(SEL)selector withParams:(NSArray*)params;
+- (void)loadNewAmbiance:(PCAmbianceSound)ambiance forScene:(CCScene*)scene;
+@property(nonatomic, retain)GCMusicController*	_musicController;
+@property(nonatomic, retain)CCScene*			_currentScene;
+@property(nonatomic, retain)NSArray*			_currentParams;
+@property(nonatomic, assign)SEL					callFunc;
+@property(nonatomic, assign)BOOL				isMusicAvailable;
+@end
+
+NSLock *lock;
+@implementation PCPicrossMainController
+@synthesize isMusicAvailable,
+			callFunc,
+			_currentParams,
+			_currentScene,
+			_musicController;
+
+#pragma mark private
+#pragma mark changeScene
+- (void)startUpScene{
+	[[CCDirector sharedDirector] setProjection:CCDirectorProjection2D];
+	CCScene* startScene = [[CCScene alloc] init];
+	[[CCDirector sharedDirector] runWithScene: startScene];
+	[startScene release];
+
+#if (!PCDEBUG_DISABLESOUND)
+	if([GCMusicController sharedManager].state == kGSOkay){
+#endif
+    //[self changeSceneAsync: @selector(homeScene)	withParams: nil];
+<<<<<<< .mine
+
+	 [self changeSceneAsync: @selector(galaxiesScene)	withParams: nil];
+=======
+	 [self changeSceneAsync: @selector(galaxiesScene)	withParams: nil];
+>>>>>>> .r46
+	// [self changeSceneAsync:@selector(constelationScene:)	withParams: [NSArray arrayWithObjects: @"constelation_002.tmx", nil]];
+<<<<<<< .mine
+	// [self changeSceneAsync:@selector(stageScene:)			withParams: [NSArray arrayWithObjects: @"constelation_002.tmx", [NSNumber numberWithInt: 1], nil]];
+=======
+	// [self changeSceneAsync:@selector(stageScene:) withParams: [NSArray arrayWithObjects: @"constelation_002.tmx", [NSNumber numberWithInt: 1], nil]];
+#if (!PCDEBUG_DISABLESOUND)
+	}
+>>>>>>> .r46
+#endif
+}
+
+- (void)galaxiesScene{
+	NSAutoreleasePool* pool				= [[NSAutoreleasePool alloc] init];
+	[self eagleContext];
+	
+	PCPicrossGalaxyMenu* picrossGalaxy	= [[PCPicrossGalaxyMenu alloc] initWithGalaxyDelegate: self];
+	[self loadNewAmbiance: ambianceIntoMaps forScene: [picrossGalaxy scene]];
+	
+	[picrossGalaxy	release];
+	[pool			release];
+}
+
+static BOOL wasBeforInStageScene = NO;
+
+- (void)homeScene{
+	NSAutoreleasePool* pool		= [[NSAutoreleasePool alloc] init];
+    [self eagleContext];
+	PCHomePage* homePage        = [PCHomePage new];
+    
+    [homePage displayButton:^() {
+        NSLog(@"slef %@", self);
+        [self changeSceneAsync: @selector(galaxiesScene)	withParams: nil];
+    }];
+    
+    [self loadNewAmbiance: ambianceIntoConstellation forScene: [homePage scene]];
+
+    [homePage release];
+	[pool release];
+}
+
+- (void)constelationScene:(NSArray*)params{
+	NSAutoreleasePool* pool				= [[NSAutoreleasePool alloc] init];
+	[self eagleContext];
+
+	PCConstelationMap* constelationMap	= [[PCConstelationMap alloc] initWithDelegate: (id <PCConstelationMapDelegate>)self 
+																  andConstelationName: [params objectAtIndex: 0]];
+
+	
+	if(wasBeforInStageScene)
+		[constelationMap addChild: [GCTransition transitionWithCallBack:^(){
+					wasBeforInStageScene	= NO;
+			CCNode* trans					=	[constelationMap getChildByTag: 150];
+			[constelationMap removeChild: trans cleanup: YES];
+		} isReverse: YES] z: 150 tag: 150];
+	
+	[self loadNewAmbiance: ambianceIntoConstellation forScene: [constelationMap scene]];
+
+	[constelationMap	release];
+	[pool				release];
+}
+
+- (void)stageScene:(NSArray*)params{
+	NSAutoreleasePool* pool				= [[NSAutoreleasePool alloc] init];
+	[self eagleContext];
+	
+	NSString* currentMap				= [params objectAtIndex: 0];
+	uint currentStageSelected			= [[params objectAtIndex: 1] unsignedIntValue];
+	PCPicrossGame*		picrossGame		= [PCPicrossGameFactory returnedRetainedPicrossGame: currentMap
+																			forStage: currentStageSelected 
+																		withDelegate: self];
+
+	[picrossGame addChild: [GCTransition transitionWithCallBack:^(){
+		CCNode* trans = [picrossGame getChildByTag: 150];
+		[picrossGame removeChild: trans cleanup: YES];
+	} isReverse: YES] z: 150 tag: 150];
+	
+	[self loadNewAmbiance: ambianceIntoConstellation forScene: [picrossGame scene]];
+
+	[picrossGame	release];
+	[pool			release];
+}
+
+- (void)callLoader{
+	PCLoader* loader = [[PCLoader alloc] initWithLoaderDelegate: self];
+	[[CCDirector sharedDirector] replaceScene: [CCTransitionCrossFade transitionWithDuration: 0.5f scene: [loader scene]]];
+	[loader release];
+}
+
+- (void)loadNewAmbiance:(PCAmbianceSound)ambiance forScene:(CCScene*)scene{
+#if (!PCDEBUG_DISABLESOUND)
+	[[GCMusicController sharedManager] changeAmbience: ambiance];
+#endif
+	_currentScene = scene;
+	[[CCDirector sharedDirector] replaceScene: scene];
+}
+
+#pragma mark logic
+
+- (void)changeSceneAsync:(SEL)selector withParams:(NSArray*)params{
+	NSInvocationOperation* sceneLoadOp	= [[[NSInvocationOperation alloc] initWithTarget:self selector: selector object: params] autorelease];
+	NSOperationQueue *opQ				= [[[NSOperationQueue alloc] init] autorelease]; 
+    [opQ addOperation: sceneLoadOp];
+}
+
+- (void)eagleContext{
+	EAGLContext *k_context = [[[EAGLContext alloc]
+                               initWithAPI: kEAGLRenderingAPIOpenGLES1
+                               sharegroup: [[[[CCDirector sharedDirector] openGLView] context] sharegroup]] autorelease];    
+    [EAGLContext setCurrentContext:k_context];
+}
+
+#pragma mark musicDelegate
+
+- (void)musicEngineIsInitialised{
+	isMusicAvailable = YES;
+	NSLog(@"MUSIC INITIALISED");
+	[self changeSceneAsync:@selector(galaxiesScene)		withParams: nil];
+}
+
+#pragma mark PCPicrossGalaxyMenuDelegate
+
+- (void)backPressed{
+	NSLog(@"go back to main screen");
+}
+
+- (void)loadingPageIsSet{
+	NSLog(@"loadingPageIsSet");
+	[self changeSceneAsync: callFunc withParams: _currentParams];
+}
+
+- (void)constelationHasBeenSelected:(NSString*)constelationName{
+	callFunc = @selector(constelationScene:);
+	[self set_currentParams: [NSArray arrayWithObjects: constelationName, nil]];
+	[self callLoader];
+}
+
+#pragma mark PCConstelationMapDelegate
+
+- (void)stageWasSelected:(uint)stage forConstelation:(NSString*)constelationName;{
+	callFunc = @selector(stageScene:);
+	[self set_currentParams: [NSArray arrayWithObjects: constelationName, [NSNumber numberWithInt: stage], nil]];
+
+	[_currentScene addChild: [GCTransition transitionWithCallBack:^(){
+		[self callLoader];
+	} isReverse: NO] z: 150 tag: 0];
+}
+
+- (void)goBackFromConstelationPressed{
+	callFunc = @selector(galaxiesScene);
+	[self set_currentParams: nil];
+	[self callLoader];
+}
+
+#pragma mark PCPicrossGameDelegate
+- (void)stageExit:(NSString*)mapName{
+	callFunc				= @selector(constelationScene:);
+	wasBeforInStageScene	= YES;
+	[self set_currentParams: [NSArray arrayWithObjects: mapName, nil]];	
+	[self callLoader];
+}
+
+#pragma mark alloc/Dealloc
+- (id)init{
+	if(self = [super init]){
+		lock = [[NSLock alloc] init];
+#if (!PCDEBUG_DISABLESOUND)
+		NSLog(@"DELEGATE SOUND SET");
+		[[GCMusicController sharedManager] setDelegate: self];
+#endif
+		[self startUpScene];
+	}
+	return self;
+}
+
+- (void)dealloc{
+	[_currentParams		release];
+	[_currentScene		release];
+	[_musicController	release];
+	[super				dealloc];
+}
+@end

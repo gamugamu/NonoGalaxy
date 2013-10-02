@@ -1,0 +1,158 @@
+//
+//  PCConnectToDatabase.m
+//  picrossGame
+//
+//  Created by loïc Abadie on 04/05/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "PCConnectToDatabase.h"
+#import "PCFilesManager.h"
+#import "GameConfig.h"
+#import "ASIFormDataRequest.h"
+#import "ASINetworkQueue.h"
+
+@interface PCConnectToDatabase()<NSXMLParserDelegate>
+- (void)downloadSpecificConstelations:(NSSet*)constelationList;
+- (void)analyseConstelationListData:(NSData*)data;
+- (void)downloadIsVoid;
+@property(nonatomic, assign)BOOL isTheTagWanted;
+@property(nonatomic, assign)BOOL isRequestFailed;
+@property(nonatomic, copy)void (^downloadComplete)(CDBDownloadError error, NSSet* newMap);
+@property(nonatomic, retain)NSSet* _mapsIdx;
+@end
+
+@implementation PCConnectToDatabase
+@synthesize isTheTagWanted,
+			isRequestFailed,
+            downloadComplete    = _downloadComplete,
+            isReadyToDownload   = _isReadyToDownload,
+			_mapsIdx;
+
+#pragma mark ============================ public ===============================
+#pragma mark ===================================================================
+
+#pragma mark - public
+
+- (void)downloadConstelationslist:(void(^)(CDBDownloadError error, NSSet* newMap))onCompletion{
+    _isReadyToDownload              = NO;
+    self.downloadComplete           = onCompletion;
+	__block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL: [NSURL URLWithString: GamugamuConstelatioListURL]];
+	
+    [request setCompletionBlock:^{
+        [request retain];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            [self analyseConstelationListData: [request responseData]];
+            [request release];
+        });
+	}];
+    
+	[request setFailedBlock:^{
+        [self downloadDone: CDBDownloadError_cantConnectToServer withMap: nil];
+	}];
+    
+	[request startAsynchronous];
+}
+
+- (void)downloadSpecificConstelations:(NSSet*)constelationList{
+	ASINetworkQueue* queue = [[ASINetworkQueue alloc] init];
+	[queue setDelegate: self];
+	[queue setRequestDidFailSelector: @selector(downloadConstelationListFailed:)];
+	[queue setQueueDidFinishSelector: @selector(downloadConstelationListComplete:)];
+	
+	for (NSString* nonoSets in constelationList) {
+		ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: [NSURL URLWithString: GamugamuSpecificConstelationURL]];
+		[request setPostValue: nonoSets forKey: ConstKey];
+		[request setDownloadDestinationPath: [[PCFilesManager sharedPCFileManager] downloadedFiles: nonoSets]];
+		[queue addOperation:request];
+	}
+	[queue go];
+}
+
+#pragma mark private methode
+- (void)analyseConstelationListData:(NSData*)data{
+	NSError* errorString = nil;
+	NSArray* dt =	[[NSPropertyListSerialization	propertyListWithData: data
+															 options: NSPropertyListImmutable
+															  format: nil
+															   error: &errorString] objectForKey: ConstKey];		
+	
+	if(errorString){
+        // Impossible de désérialiser les données
+        [self downloadDone: CDBDownloadError_DataWrong withMap: nil];
+		return;
+	}
+	
+	NSMutableSet*	importedList	= [NSMutableSet setWithArray: dt];
+	NSSet*			currentList		= [NSSet setWithArray: [[PCFilesManager sharedPCFileManager] zipMapsList]];
+		
+	// check if there's a nasty ".DS_Store" in it
+	[importedList removeObject: @".DS_Store"];
+	[importedList minusSet: currentList];
+	[self set_mapsIdx: importedList];
+	
+	if([importedList count]){
+        [self downloadSpecificConstelations: importedList];
+    }
+	else
+		[self downloadIsVoid];
+}
+
+#pragma mark ASIFormDataRequest Delegate
+- (void)downloadIsVoid{
+    [self downloadDone: CDBDownloadError_NotingNew withMap: nil];
+}
+
+- (void)downloadConstelationListComplete:(ASINetworkQueue *)queue{
+	[queue release];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        if (isRequestFailed){
+            [self downloadDone: CDBDownloadError_RequestFailed withMap: nil];
+            return;
+        }
+        
+        NSError* error = nil;
+        
+        [[PCFilesManager sharedPCFileManager] unzipDownloadedData: &error];
+        
+        if(error)
+            [self downloadDone: CDBDownloadError_RequestFailed withMap: nil];
+        else
+            [self downloadDone: CDBDownloadError_none withMap: _mapsIdx];
+    });
+}
+
+- (void)downloadConstelationListFailed:(ASINetworkQueue *)queue{
+	isRequestFailed     = YES;
+}
+
+#pragma mark alloc / dealloc
+
+- (id)init{
+    if(self = [super init]){
+        _isReadyToDownload = YES;
+    }
+    return self;
+}
+
+- (void)dealloc{
+    [_downloadComplete  release];
+	[_mapsIdx           release];
+	[super dealloc];
+}
+
+#pragma mark ============================ private ==============================
+#pragma mark ===================================================================
+
+- (void)downloadDone: (CDBDownloadError)error withMap: (NSSet*)maps{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(_downloadComplete)
+            _downloadComplete(error, maps);
+        
+        _isReadyToDownload = YES;
+    });
+}
+
+@end

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>cross.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{288, 176}, {16, 15}}</string>
+			<key>offset</key>
+			<string>{0, -1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{3, 4}, {16, 15}}</string>
+			<key>sourceSize</key>
+			<string>{22, 21}</string>
+		</dict>
+		<key>lvl_big.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{238, 2}, {180, 172}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{9, 8}, {180, 172}}</string>
+			<key>sourceSize</key>
+			<string>{198, 188}</string>
+		</dict>
+		<key>lvl_medium.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 235}, {142, 136}}</string>
+			<key>offset</key>
+			<string>{0, -2}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{8, 9}, {142, 136}}</string>
+			<key>sourceSize</key>
+			<string>{158, 150}</string>
+		</dict>
+		<key>lvl_no_big.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{238, 176}, {24, 26}}</string>
+			<key>offset</key>
+			<string>{1, -1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{5, 3}, {24, 26}}</string>
+			<key>sourceSize</key>
+			<string>{32, 30}</string>
+		</dict>
+		<key>lvl_no_small.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{146, 235}, {110, 114}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{7, 5}, {110, 114}}</string>
+			<key>sourceSize</key>
+			<string>{124, 124}</string>
+		</dict>
+		<key>lvl_small.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{258, 235}, {91, 86}}</string>
+			<key>offset</key>
+			<string>{-1, -1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{6, 8}, {91, 86}}</string>
+			<key>sourceSize</key>
+			<string>{105, 100}</string>
+		</dict>
+		<key>stage_glow.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 2}, {234, 231}}</string>
+			<key>offset</key>
+			<string>{2, -4}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{9, 10}, {234, 231}}</string>
+			<key>sourceSize</key>
+			<string>{248, 243}</string>
+		</dict>
+		<key>start.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{264, 176}, {22, 22}}</string>
+			<key>offset</key>
+			<string>{-1, -1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{3, 3}, {22, 22}}</string>
+			<key>sourceSize</key>
+			<string>{30, 26}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{512, 512}</string>
+	</dict>
+</dict>
+</plist>

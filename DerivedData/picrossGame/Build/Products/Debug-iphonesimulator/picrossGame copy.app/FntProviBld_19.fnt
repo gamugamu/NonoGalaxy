@@ -1,0 +1,19 @@
+info face="Providence-Caps" size=19 bold=0 italic=0 charset="" unicode=0 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1
+common lineHeight=18 base=14 scaleW=64 scaleH=64 pages=1 packed=0
+page id=0 file="FntProviBld_19.png"
+chars count=15
+char id=233 x=1 y=1 width=8 height=15 xoffset=2 yoffset=-1 xadvance=11 page=0 chnl=0 letter="é"
+char id=109 x=10 y=1 width=14 height=12 xoffset=2 yoffset=2 xadvance=16 page=0 chnl=0 letter="m"
+char id=107 x=25 y=1 width=11 height=12 xoffset=2 yoffset=2 xadvance=13 page=0 chnl=0 letter="k"
+char id=112 x=37 y=1 width=9 height=12 xoffset=1 yoffset=2 xadvance=11 page=0 chnl=0 letter="p"
+char id=115 x=47 y=1 width=8 height=12 xoffset=2 yoffset=3 xadvance=11 page=0 chnl=0 letter="s"
+char id=101 x=56 y=1 width=7 height=12 xoffset=2 yoffset=2 xadvance=11 page=0 chnl=0 letter="e"
+char id=114 x=1 y=17 width=11 height=11 xoffset=1 yoffset=4 xadvance=12 page=0 chnl=0 letter="r"
+char id=97 x=13 y=17 width=11 height=11 xoffset=1 yoffset=4 xadvance=13 page=0 chnl=0 letter="a"
+char id=116 x=25 y=17 width=10 height=11 xoffset=2 yoffset=3 xadvance=12 page=0 chnl=0 letter="t"
+char id=99 x=36 y=17 width=8 height=11 xoffset=2 yoffset=3 xadvance=11 page=0 chnl=0 letter="c"
+char id=111 x=45 y=17 width=10 height=10 xoffset=2 yoffset=4 xadvance=12 page=0 chnl=0 letter="o"
+char id=100 x=1 y=29 width=9 height=10 xoffset=1 yoffset=4 xadvance=11 page=0 chnl=0 letter="d"
+char id=108 x=11 y=29 width=8 height=10 xoffset=2 yoffset=4 xadvance=11 page=0 chnl=0 letter="l"
+char id=45 x=20 y=29 width=7 height=2 xoffset=2 yoffset=7 xadvance=10 page=0 chnl=0 letter="-"
+char id=32 x=28 y=29 width=0 height=0 xoffset=10 yoffset=34 xadvance=10 page=0 chnl=0 letter="space"

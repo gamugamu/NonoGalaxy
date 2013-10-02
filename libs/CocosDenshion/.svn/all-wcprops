@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/nonogalaxy/!svn/ver/46/libs/CocosDenshion
+END
+CDXMacOSXSupport.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CDXMacOSXSupport.m
+END
+CDConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CDConfig.h
+END
+CocosDenshion.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CocosDenshion.h
+END
+CDXPropertyModifierAction.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CDXPropertyModifierAction.h
+END
+SimpleAudioEngine.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/nonogalaxy/!svn/ver/46/libs/CocosDenshion/SimpleAudioEngine.h
+END
+CDOpenALSupport.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CDOpenALSupport.h
+END
+CDAudioManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CDAudioManager.h
+END
+CocosDenshion.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CocosDenshion.m
+END
+CDXPropertyModifierAction.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CDXPropertyModifierAction.m
+END
+CDXMacOSXSupport.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CDXMacOSXSupport.h
+END
+SimpleAudioEngine.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/nonogalaxy/!svn/ver/46/libs/CocosDenshion/SimpleAudioEngine.m
+END
+CDOpenALSupport.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/nonogalaxy/!svn/ver/2/libs/CocosDenshion/CDOpenALSupport.m
+END
+CDAudioManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/nonogalaxy/!svn/ver/46/libs/CocosDenshion/CDAudioManager.m
+END

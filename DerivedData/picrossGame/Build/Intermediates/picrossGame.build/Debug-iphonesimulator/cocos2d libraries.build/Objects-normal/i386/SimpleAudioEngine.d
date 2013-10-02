@@ -1,0 +1,7 @@
+dependencies: \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/CocosDenshion/SimpleAudioEngine.m \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/CocosDenshion/SimpleAudioEngine.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/CocosDenshion/CDAudioManager.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/CocosDenshion/CocosDenshion.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/CocosDenshion/CDConfig.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/CocosDenshion/CDOpenALSupport.h

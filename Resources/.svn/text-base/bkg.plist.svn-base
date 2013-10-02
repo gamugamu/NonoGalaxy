@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>bkg_03.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 564}, {830, 148}}</string>
+			<key>offset</key>
+			<string>{-11, -4}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{26, 64}, {830, 148}}</string>
+			<key>sourceSize</key>
+			<string>{904, 268}</string>
+		</dict>
+		<key>bkg_06.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 2}, {350, 310}}</string>
+			<key>offset</key>
+			<string>{-12, 9}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{23, 18}, {350, 310}}</string>
+			<key>sourceSize</key>
+			<string>{420, 364}</string>
+		</dict>
+		<key>bkg_07.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 714}, {252, 122}}</string>
+			<key>offset</key>
+			<string>{-9, 11}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{41, 44}, {252, 122}}</string>
+			<key>sourceSize</key>
+			<string>{352, 232}</string>
+		</dict>
+		<key>bkg_08.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 314}, {654, 248}}</string>
+			<key>offset</key>
+			<string>{-11, 8}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{114, 20}, {654, 248}}</string>
+			<key>sourceSize</key>
+			<string>{904, 304}</string>
+		</dict>
+		<key>bkg_10.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{354, 2}, {177, 285}}</string>
+			<key>offset</key>
+			<string>{-9, -3}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{3, 19}, {177, 285}}</string>
+			<key>sourceSize</key>
+			<string>{201, 317}</string>
+		</dict>
+		<key>bkg_11.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{533, 2}, {404, 278}}</string>
+			<key>offset</key>
+			<string>{-13, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{39, 53}, {404, 278}}</string>
+			<key>sourceSize</key>
+			<string>{508, 384}</string>
+		</dict>
+		<key>bkg_12.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{658, 314}, {202, 180}}</string>
+			<key>offset</key>
+			<string>{-4, 2}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 9}, {202, 180}}</string>
+			<key>sourceSize</key>
+			<string>{210, 202}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+	</dict>
+</dict>
+</plist>

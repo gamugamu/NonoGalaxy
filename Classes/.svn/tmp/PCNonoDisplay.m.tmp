@@ -1,0 +1,198 @@
+//
+//  PCNonoDisplay.m
+//  picrossGame
+//
+//  Created by loïc Abadie on 09/04/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import "PCNonoDisplay.h"
+
+@interface PCNonoDisplay()
+@property(nonatomic, retain)CCNode*				_parent;
+@property(nonatomic, retain)CCSpriteBatchNode*	_batch;
+@property(nonatomic, retain)CCSprite*			_nonoGlow;
+@property(nonatomic, retain)CCSprite*			_nonoDisplay;
+@property(nonatomic, assign)nonoStyle			currentStyle;
+- (void)setUpNonoRequestInApp;
+- (void)setUpNonoFloat;
+- (void)setUpNonoStanding;
+@end
+
+@implementation PCNonoDisplay
+@synthesize delegate,
+			isMoving,
+			currentPosition,
+			currentStyle,
+			_parent,
+			_batch,
+			_nonoDisplay,
+			_nonoGlow;
+
+#pragma mark - public
+- (void)changeNonoStyle:(nonoStyle)nonoStyle{
+	if(currentStyle != nonoStyle){
+		[self stopAllActions];
+		currentStyle = nonoStyle;
+		
+		switch (currentStyle) {
+			case nonoStanding:			[self setUpNonoStanding];		break;
+			case nonoRequestingInApp:	[self setUpNonoRequestInApp];	break;
+			case nonoFloating:			[self setUpNonoFloat];			break;
+			case nonoVictory:			[self setUpNonoVictory];		break;
+            case nonoFailed:			[self setUpNonoFailed];         break;
+		}
+	}
+}
+
+- (void)moveToPoints:(CGPoint*)pnt lenght:(uint)lenght matrice:(CGSize)size inverseY:(uint)invertY{
+	if(!lenght) return;
+
+	CGPoint lastPnt	= pnt[lenght - 1];
+	if(CGPointEqualToPoint(lastPnt, self.currentPosition)) return;
+	
+	// first clean all actions
+	[self stopAllActions];
+	CCArray* movesTo	= [CCArray arrayWithCapacity: lenght];
+	// check if it's a reversed move too
+	for (int i = 0; i < lenght; i++){
+		// call it befor each stage point and check if MrNono is in the right side
+		id blockSequence = [CCCallBlock actionWithBlock:BCA(^{
+			if(currentPosition.x == pnt[i].x)
+				[self makeReverseDisplay: _nonoDisplay.scaleX];
+			else
+				[self makeReverseDisplay: (currentPosition.x > pnt[i].x)? -1 : 1];
+			currentPosition = pnt[i];
+		})];
+		
+		[movesTo addObject: blockSequence];
+		id action	= [CCMoveTo actionWithDuration:.2 position: (CGPoint){pnt[i].x * size.width - 100, (invertY - pnt[i].y) * size.height}];
+		id ease		= [CCEaseIn actionWithAction:action rate:2];;
+		
+		[movesTo addObject: ease];
+	}
+	
+	// the last call
+	id endAction = [CCCallBlock actionWithBlock:BCA(^{
+		if ([delegate respondsToSelector: @selector(mrNonoEndedMove)])
+			[delegate mrNonoEndedMove];
+		
+		isMoving		= NO;
+		[self animeFloat];
+	})];
+	
+	[movesTo addObject: endAction];
+	CCFiniteTimeAction *seq = [CCFiniteTimeAction getActionSequence: movesTo];
+	
+	// then execute
+	if (seq)
+		[self runAction: seq];
+	
+	isMoving = YES;
+}
+
+#pragma mark - private animation
+
+- (void)animeFloat{
+	[self stopAllActions];
+	[self makeReverseDisplay: 1];
+	
+	id a1		= [CCMoveBy actionWithDuration: 1 position:ccp(0, 35)];
+	id ease		= [CCEaseInOut actionWithAction: a1 rate: 2];
+	id action2	= [CCRepeatForever actionWithAction: [CCSequence actions: [[ease copy] autorelease], [ease reverse], nil]];
+	
+	[self runAction: action2];
+}
+ 
+- (void)animeStandFloat{
+	[_nonoDisplay stopAllActions];
+	_nonoDisplay.position = CGPointZero;
+	
+	id a1		= [CCMoveBy actionWithDuration: 1 position:ccp(0, 15)];
+	id ease		= [CCEaseInOut actionWithAction: a1 rate: 2];
+	id action2	= [CCRepeatForever actionWithAction: [CCSequence actions: [[ease copy] autorelease], [ease reverse], nil]];
+	
+	[_nonoDisplay runAction: action2];
+}
+
+- (void)makeReverseDisplay:(int)reverso{
+	_nonoDisplay.scaleX = reverso;
+}
+
+#pragma mark - private
+
+- (void)setUpBasic{
+	[self set_batch: [CCSpriteBatchNode batchNodeWithFile: @"nono.png"]];
+	[self set_nonoDisplay: [CCSprite spriteWithSpriteFrameName: @"nono_stand.png"]];
+	[self set_nonoGlow: [CCSprite spriteWithSpriteFrameName: @"nono_glow.png"]];
+	[self addChild: _batch];
+	[_batch addChild: _nonoGlow];
+	[_batch addChild: _nonoDisplay];
+}
+
+- (void)setUpNonoFloat{
+	[self stopAllActions];
+	_nonoGlow.visible		= YES;
+	CCSpriteFrame * frame	= [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"nono_float_0.png"];
+	[_nonoDisplay setDisplayFrame: frame];
+	[self animeFloat];
+}
+ 
+- (void)setUpNonoVictory{
+	[self stopAllActions];
+	_nonoGlow.visible		= YES;
+	_nonoGlow.position		= CGPointZero;
+	_nonoGlow.scale			= 1.4f;
+	CCSpriteFrame * frame	= [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"nono_stand.png"];
+	[_nonoDisplay setDisplayFrame: frame];
+	[self animeStandFloat];
+}
+
+- (void)setUpNonoFailed{
+	[self stopAllActions];
+    _nonoGlow.visible		= YES;
+	_nonoGlow.position		= CGPointZero;
+	_nonoGlow.scale			= 1.4f;
+	CCSpriteFrame * frame	= [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"nono_sad.png"];
+	[_nonoDisplay setDisplayFrame: frame];
+	[self animeStandFloat];
+}
+
+- (void)setUpNonoStanding{
+	[self stopAllActions];
+	_nonoGlow.visible		= NO;
+	_nonoGlow.position		= CGPointZero;
+	CCSpriteFrame * frame	= [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"nono_stand.png"];
+	[_nonoDisplay setDisplayFrame: frame];
+	[self animeStandFloat];
+}
+
+- (void)setUpNonoRequestInApp{
+	_nonoGlow.visible		= YES;
+	_nonoGlow.scale			= 1;
+	_nonoGlow.position		= CGPointZero;
+	CCSpriteFrame * frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:  @"nn_ia.png"];
+	[_nonoDisplay setDisplayFrame: frame];
+}
+
+#pragma mark alloc / dealloc
+
+- (id)initWithDelegate:(id<PCMrNonoDisplay>)delegate_{
+	[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"nono.plist"];//<---
+
+	if(self = [super init]){// defaultCapacity
+		currentStyle	= -1;
+		delegate		= delegate_;
+		[self setUpBasic];
+	}
+	return self;
+}
+
+- (void)dealloc{
+	[_parent		release];
+	[_batch			release];
+	[_nonoGlow		release];
+	[_nonoDisplay	release];
+	[super dealloc];
+}
+@end

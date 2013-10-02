@@ -1,0 +1,8 @@
+//
+//  environement.xcconfig
+//  picrossGame
+//
+//  Created by loïc Abadie on 09/02/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+PRODUCT_NAME = Test

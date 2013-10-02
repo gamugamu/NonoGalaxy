@@ -1,0 +1,31 @@
+//
+//  PCNonoDisplay.h
+//  picrossGame
+//
+//  Created by loïc Abadie on 09/04/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import "cocos2d.h"
+
+typedef enum{
+	nonoStanding,
+	nonoFloating,
+	nonoRequestingInApp,
+	nonoVictory,
+    nonoFailed
+}nonoStyle;
+
+@protocol PCMrNonoDisplay <NSObject>
+@optional
+- (void)mrNonoEndedMove;
+@end
+
+@interface PCNonoDisplay : CCNode
+@property(nonatomic, assign)CGPoint currentPosition;
+@property(nonatomic, assign)BOOL isMoving;
+@property(nonatomic, assign)id<PCMrNonoDisplay> delegate;
+- (id)initWithDelegate:(id<PCMrNonoDisplay>)delegate_;
+- (void)moveToPoints:(CGPoint*)pnt lenght:(uint)lenght matrice:(CGSize)size inverseY:(uint)invertY;
+- (void)changeNonoStyle:(nonoStyle)bubbleStyle;
+@end

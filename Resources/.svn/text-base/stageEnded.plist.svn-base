@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>failed_02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 411}, {1045, 340}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {1045, 340}}</string>
+			<key>sourceSize</key>
+			<string>{1045, 340}</string>
+		</dict>
+		<key>failed_07.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 2}, {1278, 407}}</string>
+			<key>offset</key>
+			<string>{5, 23}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{13, 0}, {1278, 407}}</string>
+			<key>sourceSize</key>
+			<string>{1294, 453}</string>
+		</dict>
+		<key>victory_03.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 1218}, {1013, 460}}</string>
+			<key>offset</key>
+			<string>{64, -20}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{141, 96}, {1013, 460}}</string>
+			<key>sourceSize</key>
+			<string>{1167, 612}</string>
+		</dict>
+		<key>victory_04.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1282, 2}, {323, 323}}</string>
+			<key>offset</key>
+			<string>{-4, 1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{9, 14}, {323, 323}}</string>
+			<key>sourceSize</key>
+			<string>{349, 353}</string>
+		</dict>
+		<key>victory_12.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 753}, {1037, 463}}</string>
+			<key>offset</key>
+			<string>{5, 13}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{70, 60}, {1037, 463}}</string>
+			<key>sourceSize</key>
+			<string>{1167, 609}</string>
+		</dict>
+		<key>victory_13.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1960, 411}, {83, 1}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {83, 1}}</string>
+			<key>sourceSize</key>
+			<string>{83, 1}</string>
+		</dict>
+		<key>victory_14.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1049, 411}, {909, 217}}</string>
+			<key>offset</key>
+			<string>{-6, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{34, 60}, {909, 217}}</string>
+			<key>sourceSize</key>
+			<string>{989, 337}</string>
+		</dict>
+		<key>victory_15.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1282, 327}, {95, 1}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {95, 1}}</string>
+			<key>sourceSize</key>
+			<string>{95, 1}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{2048, 2048}</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,265 @@
+//
+//  GameConfig.h
+//  picrossGame
+//
+//  Created by loïc Abadie on 15/10/10.
+//  Copyright __MyCompanyName__ 2010. All rights reserved.
+//
+
+#ifndef __GAME_CONFIG_H
+#define __GAME_CONFIG_H
+
+//
+// Supported Autorotations:
+//		None,
+//		UIViewController,
+//		CCDirector
+//
+
+#define USETEMPSKIN
+
+#define kGameAutorotationNone 0
+#define kGameAutorotationCCDirector 1
+#define kGameAutorotationUIViewController 2
+
+// Define here the type of autorotation that you want for your game
+//
+#define GAME_AUTOROTATION kGameAutorotationUIViewController
+#endif // __GAME_CONFIG_H
+
+// Picross Game Confid //
+#if !defined(PC_DEBUG) || PC_DEBUG == 0
+#define PCLOGINFO(...) NSLog(__VA_ARGS__)
+#endif
+
+#define PCDEBUG_FILESUNZIPPING 0 // check if the tmx files are conform to the logic game
+
+//#define PCDEBUG_CONSTELATIONMAP 1 // pour afficher les tracés des maps, et faire un check si tout les éléments sont là
+#define PCDEBUG_DISABLESOUND	1 // pour ne pas installer le osn
+
+#define IPHONEHEIGHT		768
+#define IPHONEWIDTH			1024
+#define IPHONEWIDTHDEMI		512
+#define IPHONEHEIGHTDEMI	384
+
+// volume du son
+#define SOUNDMAXVOLUME		.5f
+#define SOUNDFADEDURATION	.5f
+
+// fichier sons
+#define MUSICINTRO              @"nono_homePage.mp3"
+#define MUSICWORLD              @"nonoMap.aifc"
+#define MUSICSTAGES             @"nonoInMap.mp3"
+#define MUSICPLAYINGPICROSS     @"nonoInStage.mp3"
+#define MUSICFAILED             @"nono-Failed.mp3"
+#define MUSICWIN                @"nono-Win.mp3"
+
+#define KSOUNDNOTIF             @"SOUNDEVENT"
+#define KMUSICNOTIF             @"MUSICEVENT"
+#define SOUNDNONOMOVE           @"moveNono.caf"
+#define SOUNDUPRISE             @"upRise.caf"
+#define SOUNDPOP                @"pop.caf"
+#define SOUNDLOWBLOW            @"lowBlow.mp3"
+#define SOUNDBELL               @"output.caf"
+#define SOUNDTRANSUP            @"transUp.caf"
+#define SOUNDSMALLPOP           @"smallPop.caf"
+#define SOUNDTICK               @"tick.wav"
+#define SOUNDERROR              @"error.caf"
+
+// used by microMosaic 1/8
+#define ONETOHEIGHTIPADWIDHT	136.5f
+#define ONETOHEIGHTIPADHEIGHT	102.4
+#define ONETOHEIGHTRATIO		7.5
+
+// map tmx Keys/properties
+#define mapTmxCommentfr			@"comment_fr"
+#define mapTmxCommenten			@"comment_en"
+
+#define GamuGamuTempSkin                @"http://192.168.0.22:8888/skin.png"
+#define GamuGamuTempColor               @"http://192.168.0.22:8888/tempColor.json"
+#define GamuGamuTempIndi                @"http://192.168.0.22:8888/indice.png"
+#define GamugamuConstelatioListURL		@"http://192.168.0.22:8888/picrosses/constelationslist"
+#define GamugamuSpecificConstelationURL	@"http://192.168.0.22:8888/picrosses/specificConstelation"
+
+// they are used for the algorythme finding the names of the map
+// name format
+#define FORMATnonoSet				@"nonoSet_"
+#define FORMATmap					@"constelation_"
+#define FORMATstages				@"stagesSet_"
+#define FORMATmapDisplay			@"mapDisplay_"
+#define FORMATIndice                @"indice_"
+#define FORMATskin					@"skin_"
+#define FORMATstageCompleted		@"stgCm_"
+
+#define ConstMapFormatLenght	13				// <---
+#define Const000format			3				// <---
+
+// folders
+#define FOLDERdownload			@"download_Tmp"
+#define FOLDERtmp				@"unzippedTmp"
+#define FOLDERstages			@"stagesSet"
+#define FOLDERmaps				@"constelations"
+#define FOLDERmapDisplays		@"mapDisplays"
+#define FOLDERskins				@"skins"
+#define FOLDERIndice			@"indice"
+#define FOLDERstageCompleted	@"stagesCompleted"
+#define FOLDERstageDisplay		@"stagesDisplay/n_"
+
+// keys
+#define ConstKey				@"constelationsKey"
+
+// requirment
+#define REQUIRMENTKEY			@"requirments_"
+#define REQUIRMENTBIGGERTHAN10	@"containMapBiggerThanTen"
+
+
+// the cursor fileName
+#define CURSORNAME				@"cursor.png"
+// blankDisplay, pour le débugage. Normalement en distrib, ça devrait jms arriver.
+#define BLANKSTAGEDISPLAY		@"blankDisplay.png"
+
+// the map name stored
+#define LEFTHINT				@"leftHint.tmx"
+#define UPHINT					@"upHint.tmx"
+#define DEFAULTSKIN				@"default_skin.png"
+#define DEFAULTNUMBERS          @"numbers.png"
+
+// the micro stage file
+#define MICROSTAGEFILE			@"microStage.tmx"
+
+// the mask file
+#define MASKFILE				@"mask.tmx"
+
+// the pop box files
+#define goToBtnFile		@"gToBtn.png"
+
+///////////////////////////display//////////////////////////////
+
+// the microMap Files
+#define microMapPlist	@"microMap.plist"
+#define microMapFile	@"microMap.png"
+#define litleStar		@"sStr.png"
+#define bigStart		@"bStr.png"
+#define microstartPnt	@"mStr.png"
+#define goToMapBtnFile	@"goToMapBtn.png"
+#define unlockMapButton @"btn_unlock.png"
+#define lockedMapButton	@"btn_locked.png"
+#define mapResumBox		@"mmBox.png"
+#define	screenOnMap		@"microScreen.png"
+#define	mapRequestHallo	@"strBuy.png"
+
+// buttons files
+#define buttonCancelStraight	@"cclStr.png"
+#define buttonCancel			@"ccl.png"
+#define buttonCheckNewMap		@"btn_connect.png"
+#define buttonOk                @"btn_ok.png"
+#define buttonBuyIt				@"byit.png"
+#define buttonBack				@"back.png"
+#define buttonInfo				@"btn_info.png"
+
+// game button
+#define buttonCrossOn			@"btn_cross_on.png"
+#define buttonCrossOff			@"btn_cross_off.png"
+#define buttonFillOn			@"btn_fill_on.png"
+#define buttonFilfOff			@"btn_fill_off.png"
+
+// bubble file
+#define bubbleConstellation		@"bbl_01.png"
+#define bubbleInAppCancel		@"bbl_04.png"
+#define bubbleInVictory			@"bbl_04.png"
+#define bubbleInAppPropose		@"bbl_05.png"
+
+// the mapDisplaFile
+#define mapDisplayBlank		@"blank.png"
+#define mapDisplayNewMap	@"checkNewMaps.png"
+#define mapDisplayMutable	@"mapDisplay_%03u.png"
+
+// the map Files
+#define constelationMutable	@"constelation_%03u.tmx"
+#define mapBackButton		@"mapBackBtn.png"
+#define levelMapPlist		@"levelMap.plist"
+#define levelMapFile		@"levelMap.png"
+
+#define lvl_small			@"lvl_small.png"
+#define lvl_medium			@"lvl_medium.png"
+#define lvl_big				@"lvl_big.png"
+#define lvl_no_big			@"lvl_no_small.png"
+#define lvl_no_small		@"lvl_no_big.png"
+#define lvl_start			@"start.png"
+
+
+// map.tmx property list
+
+#define mapInfoBagroundColor		@"backgroundColor"
+#define mapInfoSubBagroundColor		@"backgroundSubColor"
+
+///////////////////////////display//////////////////////////////
+
+
+#define stgAnchor			@"start.png"
+#define stgAnchorSize		50
+
+// 36 because this is the 36th tile (crossState then fillState)
+#define STATESBORDER		51
+#define STATESHINT			56
+#define STATESCROSSEDGID	61
+#define STATESFILLGID		62
+
+#define PCMATRIXSIZE		@"matrixSize"
+#define TIMEPENALTY			60
+
+// the maximum size a grid can be
+#define PICROSSSIZEMAX		20
+
+// the actual position of the level layer in constelation_.tmx
+#define LINKERLAYER				0
+#define LEVELLAYER				1
+#define LINKERGID				101
+#define BLANKGIDFORSTAGELAYER	2
+
+// define the size of the constelations map (the segment used to draw the itinerary)
+#define MICROMAPWIDTHSEGMENT	25
+#define MICROMAPHEIGHTSEGMENT	20
+#define MICROMAPALFDOTTSEGMENT	0
+#define MICROMAPWIDTHLINE		1
+#define MICROMAPLINECOLOR		(color4Gl){0, 250, 250, 250}
+
+#define MAPWIDTHSEGMENT			120
+#define MAPHEIGHTSEGMENT		100
+#define MAPDOTTSEGMENT			0
+#define MAPHALFDOTTSEGMENT		10
+#define MAPLINEACCESSCOLOR		(color4Gl){13, 143, 150, 250}
+#define MAPLINENOACCESSCOLOR	(color4Gl){100, 161, 0, 250}
+
+// permet de détecter si la map doit être recentrer, et pas de grap possible, en dessous de ces valeurs
+#define MAPSIZETOOSMALL_WIDTH_DONTGRAP 480
+#define MAPSIZETOOSMALL_HEITH_DONTGRAP 300
+
+// all the board tiles has always the same size (5*5 / 10*10 / 15*15 / 20*20)
+// if you change this value, you MUST change the size of the graphic too.
+#define TILESIZE				44
+#define TILESIZEDEMI			22
+#define MICROTILESIZE			3
+// each n number we draw a grid line
+#define SIZEGRIDCUT				5
+#define SIZEGRIDCUTSQUARE		25
+
+// define how much a board can overlap the screen
+#define LEFTBORDEROVERLAP		TILESIZE
+#define RIGHTBORDEROVERLAP		IPHONEWIDTH - 420
+#define UPBORDEROVERLAP			TILESIZE
+#define DOWNBORDEROVERLAP		IPHONEHEIGHT - (TILESIZE*2)
+
+// used by the uiGestureRecogniser, this is how the zoom in and zoom out are defined
+#define speedPinchTolerance 1.5f
+#define scalePinchTolerance .45f
+
+// touch priority
+typedef enum {
+	pctouchMapSSBox = - 129,
+	pctouchConstMap,
+}PCTouchPriority;
+
+#ifdef INITIALSETUP
+#warning INITIALSETUP ne doit pas exister en productionjv      ==============
+#endif

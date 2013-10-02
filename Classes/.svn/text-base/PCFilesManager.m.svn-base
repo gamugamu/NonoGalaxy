@@ -1,0 +1,413 @@
+//
+//  PCFilesManager.m
+//  picrossGame
+//
+//  Created by loïc Abadie on 03/05/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "PCFilesManager.h"
+#import "PCNameFormater.h"
+#import "PCPicrossDataBase.h"
+#import "PCCheckValidityTmx.h"
+#import "GGPrivateDoc.h"
+#import "ZipArchive.h"
+#import "GameConfig.h"
+
+/*	PCFilesManager knows how to handle the picross files and what they contains; All the client using dynamic data
+	(like the tmx or .png file downloaded) must use PCFilesManager.
+	ps: i did't want to make delegate on  static calls, so i used pointers instead. 
+	FAIRE UN SINGLETON POUR FILEMANAGER;
+*/
+
+@interface PCFilesManager()
+- (CCTMXTiledMap*)returnedStageMap:(NSString*)constelationName;
+- (void)updateFolder;
+- (void)cleanDSStore;
+@property (nonatomic, retain)NSArray*		_allComstelationTmx;
+@property (nonatomic, retain)NSArray*		_allDisplayPng;
+@property (nonatomic, assign)NSFileManager*	fileManager;
+@end
+	
+@implementation PCFilesManager
+@synthesize _allComstelationTmx,
+			_allDisplayPng,
+			fileManager;
+
+#pragma mark maps
+- (void)getMap:(NSString*)constelationName returnedMap:(CCTMXLayer**)rconstelation  returnedLeveLLinker:(CCTMXLayer**)rlinker returnedSize:(CGSize*)rsize returnedProperies:(NSMutableDictionary**)rinfo{
+	NSString* filePath				= [[GGPrivateDoc privateDocsDirectory: FOLDERmaps] stringByAppendingPathComponent: constelationName];
+	
+	// remember:levelLinker.png and numberConstelation are already in the main bundle. If there's an error, you should check the right path.
+	CCTMXTiledMap* constelation		= [CCTMXTiledMap tiledMapWithTMXFile: filePath andResolvedPath: [[NSBundle mainBundle] resourcePath]];
+	*rconstelation					= (CCTMXLayer*)[constelation getChildByTag: LEVELLAYER];
+	*rlinker						= (CCTMXLayer*)[constelation getChildByTag: LINKERLAYER];
+	*rsize							= constelation.mapSize;
+	*rinfo							= constelation.properties;
+}
+
+- (NSDictionary*)infoFromIndexedMap:(uInt)idx{
+	NSMutableDictionary* info;
+	[[PCFilesManager sharedPCFileManager]	getMapFromIdx: idx
+											 returnedName: nil
+									 returnedConstelation: nil
+									  returnedLeveLLinker: nil
+											 returnedSize: nil
+										returnedProperies: &info];
+	return info;
+}
+
+- (void)getMapFromIdx:(NSUInteger)idx returnedName:(NSString**)constelationName returnedConstelation:(CCTMXLayer**)rconstelation  returnedLeveLLinker:(CCTMXLayer**)rlinker returnedSize:(CGSize*)rsize returnedProperies:(NSMutableDictionary**)rinfo{	
+	NSString* constelationName_;
+	if(!constelationName)
+		constelationName_	= [PCNameFormater formatConstelationFromIndex: idx];
+	else{ 
+		*constelationName	= [_allComstelationTmx objectAtIndex: idx - 1];
+		constelationName_	= *constelationName;
+	}
+		NSString* filePath				= [[GGPrivateDoc privateDocsDirectory: FOLDERmaps] stringByAppendingPathComponent: constelationName_];
+		// remember:levelLinker.png and numberConstelation are already in the main bundle. If there's an error, you should check the right path.
+		CCTMXTiledMap* constelation		= [CCTMXTiledMap tiledMapWithTMXFile: filePath andResolvedPath: [[NSBundle mainBundle] resourcePath]];
+		if(rconstelation)
+			*rconstelation					= (CCTMXLayer*)[constelation getChildByTag: LEVELLAYER];
+		if(rlinker)
+			*rlinker						= (CCTMXLayer*)[constelation getChildByTag: LINKERLAYER];
+		if(rsize)
+			*rsize							= constelation.mapSize;
+		if(rinfo)
+			*rinfo							= constelation.properties;
+}
+
+- (CCTMXTiledMap*)getMap:(NSString*)constelationName{
+	NSString* filePath			= [[GGPrivateDoc privateDocsDirectory: FOLDERmaps] stringByAppendingPathComponent: constelationName];
+	CCTMXTiledMap* map			= [CCTMXTiledMap tiledMapWithTMXFile: filePath andResolvedPath: [[NSBundle mainBundle] resourcePath]];
+    NSLog(@"getMap %@", filePath);
+    
+	return map;
+}
+
+- (NSString*)getMapPNGNameFromIdx:(NSUInteger)idx{
+	return [_allDisplayPng objectAtIndex: idx - 1];
+}
+
+// generate the zip name, because we've already deleted them
+- (NSArray*)zipMapsList{
+	NSMutableArray* transformedArray	= [NSMutableArray arrayWithCapacity: [_allComstelationTmx count]];
+	
+	[_allComstelationTmx enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		[transformedArray addObject: [PCNameFormater getNonoSetFromMapName: [_allComstelationTmx objectAtIndex: idx]]];
+	}];
+		
+	return transformedArray;
+}
+
+- (NSUInteger)countOfMaps{
+	return [_allComstelationTmx count];
+}
+
+- (NSUInteger)idxOfMapTmxName:(NSString*)mapTmxName{
+	NSString* concat = [mapTmxName stringByReplacingOccurrencesOfString: FORMATmap withString: @""];
+	return [[concat stringByDeletingPathExtension] integerValue];
+}
+
+#pragma mark stages
+- (CCTMXTiledMap*)stagesSetforMapName:(NSString*)constelationName{
+	return [self returnedStageMap: constelationName];
+}
+
+- (CCTMXLayer*)getSelectedStage:(uint)stage forConstelation:(NSString*)constelationName{
+	CCTMXTiledMap* stagesSet = [self returnedStageMap: constelationName];
+	return (CCTMXLayer*)[stagesSet getChildByTag: stage-1];
+}
+
+- (CCTMXLayer*)getSelectedStage:(uint)stage forConstelationMap:(CCTMXTiledMap*)map{
+    return (CCTMXLayer*)[map getChildByTag: stage-1];
+}
+
+- (uint)getTotalStageForMap:(NSString*)stageSetsName{
+	CCTMXTiledMap* stagesSet	= [self returnedStageMap: stageSetsName];
+    return [[stagesSet children] count];
+}
+
+- (void)getStageDataForMap:(NSString*)stageSetsName retainedData:(stageData**)data lenght:(uint*)lenght_{
+	CCTMXTiledMap* stagesSet	= [self returnedStageMap: stageSetsName];
+	uint lenght					= [[stagesSet children] count];
+	*data						= malloc(sizeof(stageData) * lenght);
+	CCTMXLayer* layer			= nil;
+	int increment				= 0;
+	
+	//set the stage.tmx info into the data
+	CCARRAY_FOREACH([stagesSet children], layer){
+		CCTMXLayer* stage					= (CCTMXLayer*)[stagesSet getChildByTag: increment];	
+		(*data + increment)->mapSize		= [[stage.properties valueForKey: PCMATRIXSIZE] intValue];
+		(*data + increment)->dificulty		= (uint)[[layer.properties valueForKey: @"difficulty"] intValue]; //<---
+		increment++;
+	}
+	
+	*lenght_ = lenght - 1;
+}
+
+- (CCTMXTiledMap*)returnedStageMap:(NSString*)constelationName{
+	NSString* stageName			= [constelationName stringByReplacingOccurrencesOfString: FORMATmap withString: FORMATstages];
+	NSString* filePath			= [[GGPrivateDoc privateDocsDirectory: FOLDERstages] stringByAppendingPathComponent: stageName];
+	CCTMXTiledMap* constelation	= [CCTMXTiledMap tiledMapWithTMXFile: filePath andResolvedPath: [[NSBundle mainBundle] resourcePath]];
+	
+	return constelation;
+}
+
+#pragma mark info
+
+- (NSDictionary*)getInfoForMapName:(NSString*)mapName{
+	return [self getMap: mapName].properties;
+}
+
+#pragma mark image
+
+- (NSString*)getDisplayImageforMapName:(NSString*)mapName{
+	return [[GGPrivateDoc privateDocsDirectory: FOLDERmapDisplays] stringByAppendingPathComponent: [PCNameFormater getMapDisplaySetFromMapName: mapName]];
+}
+
+- (NSString*)getSkinForMapName:(NSString*)constelationName{
+	NSString* skinName = [PCNameFormater getSkinNameFromMapName: constelationName];
+	return [[GGPrivateDoc privateDocsDirectory: FOLDERskins] stringByAppendingPathComponent: [PCNameFormater getMapDisplaySetFromMapName: skinName]];
+}
+
+- (NSString*)indicePathName:(NSString*)mapName{
+    return [[GGPrivateDoc privateDocsDirectory: FOLDERIndice] stringByAppendingPathComponent: [PCNameFormater getMapDisplaySetFromMapName: mapName]];
+}
+
+- (NSString*)getIndiceForMapName:(NSString*)mapName{
+    // il est possible qu' il n'existe pas de skin, dans ce cas retourner nul.
+    NSString* path = [[GGPrivateDoc privateDocsDirectory: FOLDERIndice] stringByAppendingPathComponent: [PCNameFormater getMapDisplaySetFromMapName: mapName]];
+    return [fileManager fileExistsAtPath: path]? path : nil;
+}
+
+- (NSString*)getDisplayStageForIdx:(NSUInteger)idx{
+	NSString* mapByIdx = [self getMapPNGNameFromIdx: idx];
+	NSString* filePath = [[GGPrivateDoc privateDocsDirectory: FOLDERmapDisplays] stringByAppendingPathComponent: mapByIdx];
+	return filePath;
+}
+
+- (NSString*)getResolvedStageInMap:(NSUInteger)stageIdx forCurrentLevel:(NSUInteger)levelIdx{
+	NSString* stageCompletedFolder	= [NSString stringWithFormat:@"%@%03u", [GGPrivateDoc privateDocsDirectory: FOLDERstageDisplay], levelIdx];
+	NSString* currentStageInFolder	= [NSString stringWithFormat:@"%@%03u.png", FORMATstageCompleted, stageIdx];
+	NSString* urlStageResolved		=  [stageCompletedFolder stringByAppendingPathComponent: currentStageInFolder];
+
+	// si par on ne trouve pas d'image, on en met une par defaul. Sinon l'api cocos2d plante quand il y a pas d'image.
+	if([fileManager fileExistsAtPath: urlStageResolved])
+		return urlStageResolved;
+	else
+		return BLANKSTAGEDISPLAY;
+}
+
+#pragma mark logic
+- (void)updateFolder{
+	#if (PCDEBUG_FILESUNZIPPING)
+	[self cleanDSStore];
+	#endif
+	[self set_allComstelationTmx:	[fileManager contentsOfDirectoryAtPath: [GGPrivateDoc privateDocsDirectory: FOLDERmaps]
+																   error: nil]];
+	[self set_allDisplayPng:		[fileManager contentsOfDirectoryAtPath: [GGPrivateDoc privateDocsDirectory: FOLDERmapDisplays]
+																   error: nil]];
+}
+
+- (void)reUpdateFolder{	
+	[self updateFolder];
+}
+
+- (void)cleanDSStore{
+	// check if there's a nasty ".DS_Store" in it
+	[fileManager removeItemAtPath: [[GGPrivateDoc privateDocsDirectory: FOLDERmaps] stringByAppendingPathComponent: @".DS_Store"]			error: nil];
+	[fileManager removeItemAtPath: [[GGPrivateDoc privateDocsDirectory: FOLDERmapDisplays] stringByAppendingPathComponent: @".DS_Store"]	error: nil];
+}
+
+#pragma mark uncompressData
+// set where the downloaded data should go
+- (NSString*)downloadedFiles:(NSString*)nonoSetName{
+	return [GGPrivateDoc privateDocsDirectory:[NSString stringWithFormat:@"%@/%@", FOLDERdownload, nonoSetName]];
+}
+
+- (BOOL)unzipDownloadedData:(NSError**)error{
+	NSMutableDictionary* errorInfo	= [NSMutableDictionary dictionaryWithCapacity: 3];
+	
+	#if (PCDEBUG_FILESUNZIPPING)
+	[fileManager setDelegate: self];
+	[self cleanDSStore];
+	#endif
+	
+	NSMutableArray* tmpList			= [NSMutableArray arrayWithArray: [fileManager  contentsOfDirectoryAtPath: [GGPrivateDoc privateDocsDirectory: FOLDERdownload]
+																										error: nil]];
+	
+	
+	// for the moment we start only with only one file. We'll change that later
+	for(NSString* zipName in tmpList){
+		ZipArchive* za				= [[ZipArchive alloc] init];		
+		NSString* filePath			= [[GGPrivateDoc privateDocsDirectory: FOLDERdownload] stringByAppendingPathComponent: zipName];//<-- make a dowload folder instead	
+		NSString* unzipFilesPath	= [GGPrivateDoc privateDocsDirectory: FOLDERtmp]; //<---
+		
+		// first unzip the file
+		if ([za UnzipOpenFile: filePath]) {
+			BOOL ret = [za UnzipFileTo: unzipFilesPath overWrite: YES];
+			
+			if (!ret)
+				[errorInfo setValue: [NSString stringWithFormat:@"Cannot unzip the data %@ to destination %@", filePath, unzipFilesPath] forKey:@"unZipPath Error"];
+
+			else{
+				// Check if the data match what is supposed to be.
+				NSUInteger serialisedUint = [[zipName substringWithRange: NSMakeRange(8, 3)] integerValue]; // cause it's called nonoSet_xxx.zip
+	
+	#if (PCDEBUG_FILESUNZIPPING)
+				NSLog(@"file has been unziped succefully data -> %@", [za getZipFileContents]);
+				NSArray*	files		= [PCNameFormater getNonoFileNameFromSerialisation: serialisedUint];
+				BOOL		fileExist	= YES;
+				
+				for (int i = 0;  i < [files count]; i++)
+					fileExist &= [fileManager fileExistsAtPath: [unzipFilesPath stringByAppendingPathComponent: [files objectAtIndex: i]]];
+
+				if(!fileExist){
+					[fileManager removeItemAtPath: [GGPrivateDoc privateDocsDirectory: FOLDERdownload]	error: nil];
+					[fileManager removeItemAtPath: [GGPrivateDoc privateDocsDirectory: FOLDERtmp]		error: nil];
+					NSAssert(fileExist, @"[PCFileManager]: format name error - Please check your nonoZip file again :%@, file(s) is missing or wrongly named.\n Should be: %@. If the name match check if the file is archive inside a folder", zipName, files);
+				}
+				
+#if defined(PCDEBUG) && PCCHECKVALIDITY
+				// if the names match, then watch if the data are conform to what they'd be
+				NSString* mapMame				= [PCNameFormater getNameFromSerialisation: serialisedUint forType: nonoConstelation];
+				NSString* fileMapPath			= [[GGPrivateDoc privateDocsDirectory: FOLDERtmp] stringByAppendingPathComponent: mapMame];
+				CCTMXTiledMap* map				= [CCTMXTiledMap tiledMapWithTMXFile: fileMapPath andResolvedPath: [[NSBundle mainBundle] resourcePath]];
+				
+				NSString* stageSetsMame			= [PCNameFormater getNameFromSerialisation: serialisedUint forType: nonoStageSet];
+				NSString* fileStagePath			= [[GGPrivateDoc privateDocsDirectory: FOLDERtmp] stringByAppendingPathComponent: stageSetsMame];
+				CCTMXTiledMap* stageSet			= [CCTMXTiledMap tiledMapWithTMXFile: fileStagePath andResolvedPath: [[NSBundle mainBundle] resourcePath]];
+				[PCCheckValidityTmx validateMap: map forStageSet: stageSet];
+#endif
+	#endif
+			
+				// then if it's ok, move the files to the appropriate folder
+				NSError* copyError			= nil;
+				NSString* folderList[4]		= {FOLDERmaps, FOLDERstages, FOLDERmapDisplays, FOLDERskins};
+				
+				for (int i = 0; i <= nonoSkin; i++) {
+					NSString* tmpFile	= [PCNameFormater getNameFromSerialisation: serialisedUint forType: i];
+					
+					[fileManager moveItemAtPath: [unzipFilesPath stringByAppendingPathComponent: tmpFile]
+										 toPath: [[GGPrivateDoc privateDocsDirectory: folderList[i]] stringByAppendingPathComponent: tmpFile]
+										  error: &copyError];
+                    
+                    if(copyError.code == 516) // file already exist.
+                        copyError = nil;
+				}
+				
+				// on récupère enfin tout les stages display
+				NSArray* list				= [fileManager contentsOfDirectoryAtPath: unzipFilesPath error: &copyError];
+				NSString* mapDisplayfolder	= [PCNameFormater getNameFromSerialisation: serialisedUint forType: nonoDisplayFolder];
+				mapDisplayfolder			= [GGPrivateDoc privateDocsDirectory: mapDisplayfolder];
+				
+				for (NSString* shouldBeOnlyStageDisplay in list) {
+					if([shouldBeOnlyStageDisplay rangeOfString: FORMATstageCompleted].length){
+						[fileManager moveItemAtPath: [unzipFilesPath stringByAppendingPathComponent: shouldBeOnlyStageDisplay]
+											 toPath: [mapDisplayfolder stringByAppendingPathComponent: shouldBeOnlyStageDisplay]
+											  error: &copyError];
+					}
+                    
+                    if(copyError.code == 516) // file already exist.
+                        copyError = nil;
+				}
+				
+				//if theres is an error, recursively remove the serialisation
+				if(copyError){
+					[errorInfo setValue: [NSString stringWithFormat:@"Transfer of the current data failed %@", filePath] forKey: @"move items to path"];
+
+					for (int i = 0; i <= nonoSkin; i++) {
+						NSString* tmpFile	= [PCNameFormater getNameFromSerialisation: serialisedUint forType: i];
+#if (PCDEBUG_FILESUNZIPPING)
+#endif
+
+						[fileManager removeItemAtPath: [[GGPrivateDoc privateDocsDirectory: folderList[i]] stringByAppendingPathComponent: tmpFile]
+												error: &copyError];					
+					}
+				}
+			}
+			
+			[za UnzipCloseFile];
+		}
+		else
+			[errorInfo setValue:[NSString stringWithFormat:@"Cannot unzip the current data %@, did exist? %u-", filePath, [fileManager fileExistsAtPath: filePath]] forKey:@"unZip Error"];
+		
+		[za	release];
+	}
+
+	// and don't forget to clean tmpFolder and DownloadFolder
+	[fileManager removeItemAtPath: [GGPrivateDoc privateDocsDirectory: FOLDERdownload]	error: nil];
+	[fileManager removeItemAtPath: [GGPrivateDoc privateDocsDirectory: FOLDERtmp]		error: nil];
+
+	return [errorInfo count];
+}
+
+#pragma mark delegate method
+- (BOOL)fileManager:(NSFileManager *)fileManager shouldMoveItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath{
+	#if (PCDEBUG_FILESUNZIPPING)
+	NSLog(@"[PCFileManager]: -moving file %@ to %@-", srcPath, dstPath);
+	#endif
+	return YES;
+}
+
+- (BOOL)fileManager:(NSFileManager *)fileManager shouldProceedAfterError:(NSError *)error copyingItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath{
+    if ([error code] == NSFileWriteFileExistsError) //error code for: The operation couldn’t be completed. File exists
+        return YES;
+    else
+        return NO;
+}
+
+#pragma mark singletonInstance
+#pragma mark alloc/dealloc
+static PCFilesManager* _sharedMySingleton = nil;
++ (PCFilesManager*)sharedPCFileManager{
+	@synchronized(self)
+	{
+		if (!_sharedMySingleton)
+			_sharedMySingleton = [[self alloc] init];
+	}
+	
+	return _sharedMySingleton;
+}
+
++ (id)alloc{
+	@synchronized([PCPicrossDataBase class]){
+		NSAssert(_sharedMySingleton == nil, @"Attempted to allocate a second instance of a singleton.");
+		_sharedMySingleton = [super alloc];
+		return _sharedMySingleton;
+	}
+	
+	return nil;
+}
+
+- (id)init{
+	if((self = [super init])){
+		fileManager = [NSFileManager defaultManager];
+		[self updateFolder];
+	}
+	return self;	
+}
+
+- (NSUInteger)retainCount{
+    return NSUIntegerMax;
+}
+
+- (oneway void)release{
+}
+
+- (id)retain{
+    return _sharedMySingleton;
+}
+
+- (id)autorelease{
+    return _sharedMySingleton;
+}
+
+- (void)dealloc{
+	[_allDisplayPng release];
+	[_allDisplayPng release];
+   	[super			dealloc];
+}
+@end

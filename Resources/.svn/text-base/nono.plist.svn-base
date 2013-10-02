@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>bbl_01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{723, 772}, {242, 226}}</string>
+			<key>offset</key>
+			<string>{2, -1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{8, 4}, {242, 226}}</string>
+			<key>sourceSize</key>
+			<string>{254, 232}</string>
+		</dict>
+		<key>bbl_02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{484, 772}, {237, 228}}</string>
+			<key>offset</key>
+			<string>{-6, -2}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{7, 4}, {237, 228}}</string>
+			<key>sourceSize</key>
+			<string>{263, 232}</string>
+		</dict>
+		<key>bbl_03.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 772}, {480, 254}}</string>
+			<key>offset</key>
+			<string>{3, 4}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{12, 0}, {480, 254}}</string>
+			<key>sourceSize</key>
+			<string>{498, 262}</string>
+		</dict>
+		<key>bbl_04.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 416}, {416, 354}}</string>
+			<key>offset</key>
+			<string>{0, -3}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{7, 8}, {416, 354}}</string>
+			<key>sourceSize</key>
+			<string>{430, 364}</string>
+		</dict>
+		<key>bbl_05.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 2}, {659, 412}}</string>
+			<key>offset</key>
+			<string>{1, -6}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{11, 15}, {659, 412}}</string>
+			<key>sourceSize</key>
+			<string>{679, 430}</string>
+		</dict>
+		<key>nn_ia.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{420, 416}, {339, 318}}</string>
+			<key>offset</key>
+			<string>{2, -3}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{10, 13}, {339, 318}}</string>
+			<key>sourceSize</key>
+			<string>{355, 338}</string>
+		</dict>
+		<key>nono_float_0.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{761, 650}, {120, 101}}</string>
+			<key>offset</key>
+			<string>{-1, -3}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 6}, {120, 101}}</string>
+			<key>sourceSize</key>
+			<string>{122, 107}</string>
+		</dict>
+		<key>nono_glow.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{663, 2}, {328, 329}}</string>
+			<key>offset</key>
+			<string>{-1, 4}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{90, 37}, {328, 329}}</string>
+			<key>sourceSize</key>
+			<string>{510, 411}</string>
+		</dict>
+		<key>nono_sad.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{761, 416}, {243, 232}}</string>
+			<key>offset</key>
+			<string>{-3, 9}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {243, 232}}</string>
+			<key>sourceSize</key>
+			<string>{249, 250}</string>
+		</dict>
+		<key>nono_stand.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 1028}, {172, 172}}</string>
+			<key>offset</key>
+			<string>{0, 2}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{6, 0}, {172, 172}}</string>
+			<key>sourceSize</key>
+			<string>{184, 176}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 2048}</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,22 @@
+//
+//  PCPicrossGalaxyMenuHelerp.h
+//  picrossGame
+//
+//  Created by loïc Abadie on 12/08/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "cocos2d.h"
+#import "PCMrNono.h"
+
+@interface PCPicrossGalaxyMenuHelper : NSObject
+
+// fait une animation lorsque de nouvelles cartes ont été rajoutée.
+// params newMaps: le noms des nouvelles maps envoyées par le serveurs
+// params node: le node dans lequel afficher l'animation.
+// params callBack: le callBack de la node lorsque l'animation est terminée.
+- (void)animateNewMapAdded:(NSArray*)newMaps intoNode:(CCNode*)node nodeSelectorWhenDone:(SEL)callBack;
+
+@property(nonatomic, retain)PCMrNono* MrNono;
+@end

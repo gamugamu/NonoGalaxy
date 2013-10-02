@@ -1,0 +1,133 @@
+Index: cocos2d/Menu.m
+===================================================================
+--- cocos2d/CCMenu.m	(revision 1307)
++++ cocos2d/CCMenu.m	(working copy)
+@@ -63,7 +63,7 @@
+ 		self.relativeAnchorPoint = NO;
+ 		anchorPoint_ = ccp(0.5f, 0.5f);
+ 		[self setContentSize:s];
+-		
++/*		
+ 		// XXX: in v0.7, winSize should return the visible size
+ 		// XXX: so the bar calculation should be done there
+ 		CGRect r = [[UIApplication sharedApplication] statusBarFrame];
+@@ -72,8 +72,8 @@
+ 			s.height -= r.size.width;
+ 		else
+ 			s.height -= r.size.height;
++ */
+ 		self.position = ccp(s.width/2, s.height/2);
+-
+ 		int z=0;
+ 		
+ 		if (item) {
+Index: cocos2d/MenuItem.m
+===================================================================
+--- cocos2d/CCMenuItem.m	(revision 1307)
++++ cocos2d/CCMenuItem.m	(working copy)
+@@ -356,7 +356,7 @@
+ 		self.selectedImage = selectedSprite;
+ 		self.disabledImage = disabledSprite;
+ 		
+-		[self setContentSize: [normalImage_ contentSize]];
++		[self setIsEnabled:YES];
+ 	}
+ 	return self;	
+ }
+@@ -370,31 +370,81 @@
+ 	[super dealloc];
+ }
+ 
+--(void) selected
++- (void) setNormalImage:(Sprite *)aSprite
+ {
+-	selected = YES;
++	if(normalImage_ != nil){
++		[normalImage_ release];
++		[self removeChild:normalImage_ cleanup:YES];
++	}
++	normalImage_ = [aSprite retain];
++	if(normalImage_ != nil){
++		[self addChild:aSprite];
++		[self setContentSize: [normalImage_ contentSize]];
++		normalImage_.position	= ccp(contentSize_.width/2, contentSize_.height/2);
++	}
+ }
+ 
+--(void) unselected
++- (void) setDisabledImage:(Sprite *)aSprite
+ {
+-	selected = NO;
++	if(disabledImage_ != nil){
++		[disabledImage_ release];
++		[self removeChild:disabledImage_ cleanup:YES];
++	}
++	disabledImage_ = [aSprite retain];
++	if(disabledImage_ != nil){
++		[self addChild:aSprite];
++		disabledImage_.position	= ccp(contentSize_.width/2, contentSize_.height/2);
++	}
+ }
+ 
+--(void) draw
++- (void) setSelectedImage:(Sprite *)aSprite
+ {
+-	if(isEnabled) {
+-		if( selected )
+-			[selectedImage_ draw];
+-		else
+-			[normalImage_ draw];
++	if(selectedImage_ != nil){
++		[selectedImage_ release];
++		[self removeChild:selectedImage_ cleanup:YES];
++	}
++	selectedImage_ = [aSprite retain];
++	if(selectedImage_ != nil){
++		[self addChild:aSprite];
++		selectedImage_.position	= ccp(contentSize_.width/2, contentSize_.height/2);
++	}
++}
++
++- (void)selected
++{
++	if( isEnabled ) {
++		[super selected];
++		[normalImage_ setVisible:NO];
++		[selectedImage_ setVisible:YES];
++		[disabledImage_ setVisible:NO];
++	}
++}
++
++- (void)unselected
++{
++	if( isEnabled ) {
++		[super unselected];
++		[normalImage_ setVisible:YES];
++		[selectedImage_ setVisible:NO];
++		[disabledImage_ setVisible:NO];
++	}
++}
++
++- (void)setIsEnabled:(BOOL)enabled
++{
++	[super setIsEnabled:enabled];
++	if(enabled) {
++		[normalImage_ setVisible:YES];
++		[selectedImage_ setVisible:NO];
++		[disabledImage_ setVisible:NO];
+ 		
+ 	} else {
+-		if(disabledImage_ != nil)
+-			[disabledImage_ draw];
+-		
+-		// disabled image was not provided
++		[normalImage_ setVisible:NO];
++		[selectedImage_ setVisible:NO];
++		if( disabledImage_ )
++			[disabledImage_ setVisible:YES];
+ 		else
+-			[normalImage_ draw];
++			[normalImage_ setVisible:YES];
+ 	}
+ }
+ 

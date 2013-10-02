@@ -1,0 +1,27 @@
+Nono_Message_NewMapAdded_0              = "Regarde, une nouvelle carte:\n";
+Nono_Message_NewMapAdded_1              = "J'ai trouvé ça aussi:\n";
+Nono_Message_NewMapAdded_2              = "Une autre:\n";
+Nono_Message_NewMapAdded_3              = "Ouais! Egalement ça:\n";
+Nono_Message_NewMapAdded_Done           = "C'est parti !!!";
+
+Nono_isCheking                          = "Ok, voyons voir...";
+Nono_Message_ConstelationComplete       = "Félicitation\nTu as réussi !";
+Nono_mapUnlocked                        = "Bingo, elle est à toi maintenant";
+Nono_askToBuy                           = "Cette carte est achetable";
+Nono_CantConnect                        = "Ho, quelque chose n'a pas fonctionné. Vérifie ta connection internet.";
+Nono_NothingNewToday                    = "Hu, il n'y a rien de nouveau aujourd'hui";
+Nono_FirstTime                          = "Allons chercher des cartes!";
+Nono_askToFindNewMap                    = "Chercher de nouvelles cartes?";
+Nono_alreadyChecked                     = "Tu as déjà regardé. Essaye un nouveau jour";
+Nono_asktToConnectToAppStore            = "Connection sur l'AppStore, cela peux prendre quelques secondes.";
+Nono_displayPrice                       = "Cette map coûte:";
+Nono_priceExpl                          = "Une fois cette carte achetée, tu la possèdes pour toujours.\n Tu peux la retélécharger ensuite gratuitement sur AppStore";
+Nono_mapHasBeenPaid                     = "Félicitation";
+Nono_errorMapPaid                       = "hu, une erreur"; //"this store id seems invalid, refert to the developper";
+Nono_errorTimeOut                       = "Désolé, on dirait qu'il n'y a pas de connection";
+Nono_errorOccured                       = "ha , il y a eu une erreur.";
+Nono_ReceiveResponse                    = "ha, une réponse...";
+Nono_letsCheck                          = "Est-ce que ça marche?";
+
+Nono_mapSucceed                         = "Fécilitation\n Tu as réussi!";
+Nono_mapFailed                          = ":(...\n Qu'est-ce qui s'est passé?";

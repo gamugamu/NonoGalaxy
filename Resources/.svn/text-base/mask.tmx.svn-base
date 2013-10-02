@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="44" tileheight="44">
+ <tileset firstgid="1" name="mask" tilewidth="44" tileheight="44">
+  <image source="default_skin.png" trans="ff00ff"/>
+ </tileset>
+ <layer name="skin" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA9NgGAWjYBSMglEwCkgHAN24YkFABgAA
+  </data>
+ </layer>
+</map>

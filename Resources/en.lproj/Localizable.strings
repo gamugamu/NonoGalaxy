@@ -1,0 +1,27 @@
+Nono_Message_NewMapAdded_0              = "Look a new map:\n";
+Nono_Message_NewMapAdded_1              = "I found this too:\n";
+Nono_Message_NewMapAdded_2              = "Another one:\n";
+Nono_Message_NewMapAdded_3              = "Yeah! this one too:\n";
+Nono_Message_NewMapAdded_Done           = "Let's play !!!";
+
+Nono_isCheking                          = "Ok, let's see...";
+Nono_Message_ConstelationComplete       = "Congratulation\nyou did it !";
+Nono_mapUnlocked                        = "** CONGRAT, you own this map **";
+Nono_askToBuy                           = "* Propose to buy it **";
+Nono_CantConnect                        = "Ho, something went wrong. Please check your internet connection";
+Nono_NothingNewToday                    = "Hu, ther's nothing available today";
+Nono_FirstTime                          = "First time, let's find new map?";
+Nono_askToFindNewMap                    = "ckeck new map?";
+Nono_alreadyChecked                     = "you have already checked. Try another day";
+Nono_asktToConnectToAppStore            = "Connection sur l'AppStore, cela peux prendre quelques secondes.";
+Nono_displayPrice                       = "this map cost";
+Nono_priceExpl                          = "Une fois cette carte achetée, tu l'as possèdes pour toujours.\n Tu peux la retélécharger ensuite gratuitement sur AppStore";
+Nono_mapHasBeenPaid                     = "congratulation";
+Nono_errorMapPaid                       = "hu error"; //"this store id seems invalid, refert to the developper";
+Nono_errorTimeOut                       = "sorry, the request is too long. Invalidate";
+Nono_errorOccured                       = "ha an error occured";
+Nono_ReceiveResponse                    = "ha request Received Response";
+Nono_letsCheck                          = "is it Working?";
+
+Nono_mapSucceed                         = "Congratulation\n You did it !";
+Nono_mapFailed                          = "Dude...\n What happened ?";

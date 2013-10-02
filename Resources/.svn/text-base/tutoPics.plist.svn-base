@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>tuto_0.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 2}, {231, 141}}</string>
+			<key>offset</key>
+			<string>{-13, -27}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{47, 79}, {231, 141}}</string>
+			<key>sourceSize</key>
+			<string>{351, 245}</string>
+		</dict>
+		<key>tuto_1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{235, 2}, {257, 155}}</string>
+			<key>offset</key>
+			<string>{-9, -16}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{38, 58}, {257, 155}}</string>
+			<key>sourceSize</key>
+			<string>{351, 239}</string>
+		</dict>
+		<key>tuto_2_0.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{278, 188}, {231, 197}}</string>
+			<key>offset</key>
+			<string>{-12, -13}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{47, 37}, {231, 197}}</string>
+			<key>sourceSize</key>
+			<string>{349, 245}</string>
+		</dict>
+		<key>tuto_2_1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{511, 188}, {188, 231}}</string>
+			<key>offset</key>
+			<string>{-2, 3}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{78, 5}, {188, 231}}</string>
+			<key>sourceSize</key>
+			<string>{348, 247}</string>
+		</dict>
+		<key>tuto_3_0.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{736, 2}, {197, 184}}</string>
+			<key>offset</key>
+			<string>{-3, -3}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{73, 31}, {197, 184}}</string>
+			<key>sourceSize</key>
+			<string>{349, 240}</string>
+		</dict>
+		<key>tuto_3_1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 188}, {274, 196}}</string>
+			<key>offset</key>
+			<string>{3, -8}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{40, 29}, {274, 196}}</string>
+			<key>sourceSize</key>
+			<string>{348, 238}</string>
+		</dict>
+		<key>tuto_4.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{413, 421}, {282, 232}}</string>
+			<key>offset</key>
+			<string>{1, -1}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{35, 9}, {282, 232}}</string>
+			<key>sourceSize</key>
+			<string>{350, 248}</string>
+		</dict>
+		<key>tuto_5.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{494, 2}, {240, 175}}</string>
+			<key>offset</key>
+			<string>{10, 9}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{64, 22}, {240, 175}}</string>
+			<key>sourceSize</key>
+			<string>{348, 237}</string>
+		</dict>
+		<key>tuto_anchor.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 421}, {409, 232}}</string>
+			<key>offset</key>
+			<string>{6, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{17, 8}, {409, 232}}</string>
+			<key>sourceSize</key>
+			<string>{431, 248}</string>
+		</dict>
+		<key>tuto_bkg.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 655}, {471, 273}}</string>
+			<key>offset</key>
+			<string>{-3, -3}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{3, 6}, {471, 273}}</string>
+			<key>sourceSize</key>
+			<string>{483, 279}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+	</dict>
+</dict>
+</plist>

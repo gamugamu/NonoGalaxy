@@ -1,0 +1,27 @@
+Contents of /Users/loicabadie/Documents/programation/Iphone/picross/picrossGame_Prefix.pch
+4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.1.00)
+i686-apple-darwin10
+-x
+c
+-arch
+i386
+-fmessage-length=0
+-pipe
+-std=c99
+-fpascal-strings
+-O0
+-DCOCOS2D_DEBUG_OFF
+-isysroot
+/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk
+-fexceptions
+-fasm-blocks
+-mmacosx-version-min=10.6
+-gdwarf-2
+-fvisibility=hidden
+-D__IPHONE_OS_VERSION_MIN_REQUIRED=40100
+-iquote
+-iquote
+-I/Users/loicabadie/Documents/programation/Iphone/picross/DerivedData/picrossGame/Build/Products/Debug-iphonesimulator/include
+-F/Users/loicabadie/Documents/programation/Iphone/picross/DerivedData/picrossGame/Build/Products/Debug-iphonesimulator
+-D__IPHONE_OS_VERSION_MIN_REQUIRED=040100
+SDK_PRODUCT_BUILD_VERSION=9A334

@@ -1,0 +1,21 @@
+dependencies: \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCTexture2D.m \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/CCGL.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/glu.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/EAGLView.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/ESRenderer.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/CCNS.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCTexture2D.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/ccConfig.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/ccMacros.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/CCDirectorIOS.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Platforms/iOS/../../CCDirector.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/ccTypes.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCConfiguration.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Support/ccUtils.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCTexturePVR.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/CCTextureCache.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/libs/cocos2d/Support/ccCArray.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/Classes/../libs/FontLabel/FontManager.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/Classes/../libs/FontLabel/FontLabelStringDrawing.h \
+  /Users/loicabadie/Documents/programation/Iphone/picross/Classes/../libs/FontLabel/ZAttributedString.h

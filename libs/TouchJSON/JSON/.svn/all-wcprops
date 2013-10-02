@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/nonogalaxy/!svn/ver/2/libs/TouchJSON/JSON
+END
+CJSONScanner.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/nonogalaxy/!svn/ver/2/libs/TouchJSON/JSON/CJSONScanner.m
+END
+CJSONSerializer.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/nonogalaxy/!svn/ver/2/libs/TouchJSON/JSON/CJSONSerializer.m
+END
+CJSONDeserializer.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/nonogalaxy/!svn/ver/2/libs/TouchJSON/JSON/CJSONDeserializer.h
+END
+CJSONDeserializer.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/nonogalaxy/!svn/ver/2/libs/TouchJSON/JSON/CJSONDeserializer.m
+END
+CJSONScanner.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/nonogalaxy/!svn/ver/2/libs/TouchJSON/JSON/CJSONScanner.h
+END
+CJSONSerializer.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/nonogalaxy/!svn/ver/2/libs/TouchJSON/JSON/CJSONSerializer.h
+END

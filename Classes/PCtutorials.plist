@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tutorial_0</key>
+	<array>
+		<string>Bienvenue dans NonoGalaxy!\nIci je vais t&apos;apprendre les bases du jeu.\nPas de panique, ça dure 5 minutes!</string>
+		<string>Le but c&apos;est de découvrir le dessin qui se cache derrière le puzzle. Pour ça, tu dois résoudre le bon nombre de case à cocher sur chaque ligne.</string>
+		<string>Chaque indices sur les cotés de la grille indique le nombre de cellules à remplir...</string>
+		<integer>1</integer>
+		<string>par exemple: \n&quot;5&quot; pour dire qu&apos;il y à 5 cases consécutives à remplir.&quot;2&quot; et &quot;1&quot; pour dire qu&apos;il a deux cases consécutives puis une case isolée...</string>
+		<integer>2</integer>
+		<string>c&apos;est valable aussi bien pour les lignes verticales que celles horizontales...</string>
+		<integer>2</integer>
+		<string>bien sur, les indices indiquent le nombres de cases à cocher, mais pas précisement ou elles se trouvent!...</string>
+		<integer>3</integer>
+		<string>c&apos;est en croisant les informations que tu déduiras le puzzle.</string>
+		<integer>3</integer>
+		<string>Commençons par le plus évident: Cette ligne a pour indice &apos;5&apos;. Comme la ligne est faite de 5 cases, on peut la remplir entièrement.</string>
+		<integer>4</integer>
+		<string>Regarde, les indices résolus sont devenu plus clair! En résolvant la ligne de &quot;5&quot; on a résolu aussi les 3 autres lignes à indice &quot;1&quot;.</string>
+		<integer>5</integer>
+		<string>Maintenant à ton tour d&apos;essayer. La dernière ligne horizontale indique &quot;3&quot; en indice...</string>
+		<string>les deux cases aux extrémités ne sont pas remplissables. Remplir les trois cases du milieu est donc la seul solution possible...</string>
+		<string>Pour remplir une case, appuie dessus et relève ton doigt pour l&apos; activer. N&apos;aie pas peur, essaye!</string>
+		<integer>6</integer>
+		<string>Bravo! tu as résolu cette ligne. Regarde l&apos;indice de la ligne s&apos;est s&apos;éclaircit. On est trop fort!</string>
+		<string>Il existe des méthodes pour cocher les cases plus vite, mais avant,  il y a une chose importante dont je dois te parler...</string>
+		<string>Il y a le boutton &quot;FILL&quot; pour remplir les cases. C&apos;est ce que tu viens de faire... </string>
+		<string>mais il y a aussi la case &quot;CROSS&quot;, pour cocher les cases quand tu es sûr qu&apos;elles sont vides...</string>
+		<integer>7</integer>
+		<string>Sache qu&apos;une case cochée est toujours décochable.</string>
+		<integer>8</integer>
+		<string>Essaye à présent de cocher cette case çi.</string>
+		<integer>9</integer>
+		<string>Regarde, en cochant cette case, cet indice est devenu plus claire. C&apos;est parce que la case a été &quot;isolée&quot;...</string>
+		<integer>10</integer>
+		<string>Ce genre d&apos;information est précieux lors d&apos;une partie. N&apos;hésite pas à l&apos;utiliser!</string>
+		<string>Le puzzle est presque terminé. Il ne reste plus qu&apos;une case à remplir. A toi l&apos;honneur!</string>
+		<integer>11</integer>
+		<string>Bravo, tu as saisi les bases du jeu. Dans la prochaine partie je t&apos;expliquerai d&apos;autres astuces utiles.</string>
+		<integer>12</integer>
+		<string></string>
+		<integer>13</integer>
+	</array>
+	<key>tutorial_2</key>
+	<array>
+		<string>Parfois tu tomberas sur des puzzles où la solution n&apos;est pas si évidente...</string>
+		<string>Il y a une astuce que j&apos;aime bien utiliser et qui marche à coup sur.</string>
+		<string>En utilisant la technique &apos;Simple boxes&apos;, tu peux trouver de nouvelles cases à cocher.</string>
+		<string>En énumérant toutes les possibilités, tu peux trouver les cases qui ne changent jamais</string>
+		<integer>1</integer>
+		<string>Regarde ici, il y a 4 cases sur 5 qui sont cochables. On peut donc déduire que les 3 cases du milieu sont forcement cochables.</string>
+		<integer>2</integer>
+		<string>Ca fonctionne à chaque fois, tant que la longueur des cases à cocher est supérieur à la moitié du tableau. Comme pour cette série de 3.</string>
+		<integer>3</integer>
+		<string>Une fois que tu as élucidé certains éléments du puzzle, le reste devient beaucoups plus simple.</string>
+		<string>Maintenant tu connais la technique &quot;Simple Box&quot; ! Utilise-là dès que tu es coincé dans un puzzle.</string>
+		<string>Et voilà, tu peux affronter l&apos;univers de Nono Galaxy sans crainte !!! </string>
+		<string>Sache qu&apos;il existe des tas de techniques différentes pour progresser dans un puzzle difficile.</string>
+		<string>A toi de réflechir et de trouver tes propres solution! Bonne chance</string>
+		<integer>4</integer>
+	</array>
+	<key>tutorial_1</key>
+	<array>
+		<string>Maintenant c&apos;est le moment de te montrer quelques techniques bien utiles.</string>
+		<string>Lorsque tu remplies une série de case, pour aller plus vite, tu peux les faire en un seul coup...</string>
+		<string>Pour cela, fait glisser ton doigt le long des cases que tu veux transformer, et relève le doigt pour activer la selection.</string>
+		<integer>1</integer>
+		<string>Essaye ici. Glisse ton doigt le long de la ligne. Et rempli les cases d&apos;un seul coup.</string>
+		<integer>2</integer>
+		<string>Bravo! Sache qu&apos;une fois le doigt posé rien n&apos;est définitif :...</string>
+		<string>tu peux toujours annuler ce que tu as selectionné en posant un second doigt sur l&apos;écran tactile.</string>
+		<integer>3</integer>
+		<string>Compris? Un doigt pour transformer la case, deux doigts annuler la selection.</string>
+		<string>Tant que ton doigt n&apos;est pas relevé, tu peux toujours réctifier le tir si tu penses t&apos;être tromper.</string>
+		<string>A ton tour de mettre en pratique une annulation. Touche n&apos;importe quelle case, et annule là avec un second doigt.</string>
+		<integer>4</integer>
+		<string>Maintenant tu sais a peu près tout ce qu&apos;il faut pour jouer à NonoGalaxy.</string>
+		<string>Je te laisse finir le puzzle comme un grand. Bon courage!</string>
+		<integer>5</integer>
+	</array>
+	<key>tutorial_3</key>
+	<array>
+		<string>Maintenant tu es assez grand pour te debrouiller tout seul.</string>
+		<string>Je te laisse appliquer tout ce que je t&apos;ai enseigné jusqu&apos;à présent.</string>
+		<string>Et n&apos;oublie pas, essaye d&apos;être le plus méthodique possible, chaque puzzle a sa propre solution !</string>
+		<string>bon courage !</string>
+		<integer>1</integer>
+	</array>
+</dict>
+</plist>

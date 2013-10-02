@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="15" height="15" tilewidth="44" tileheight="44">
+ <tileset firstgid="1" name="mask" tilewidth="44" tileheight="44">
+  <image source="default_skin.png" trans="ff00ff"/>
+ </tileset>
+ <tileset firstgid="41" name="numbers" tilewidth="44" tileheight="44">
+  <image source="numbers.png"/>
+ </tileset>
+ <layer name="map" width="15" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA9NgGAWjYBQMJAAAyHBK4IQDAAA=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="15" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAwtiGAWjYBQMJAAATGpP0IQDAAA=
+  </data>
+ </layer>
+</map>
