@@ -373,7 +373,7 @@ static BoundBoard boundBoard;	// set the max limit of the board when it move
 		case UIGestureRecognizerStateEnded:{
 			if(fabsf(recognizer.velocity) > speedPinchTolerance){
 				if(fabsf(zoomType - recognizer.scale) > scalePinchTolerance){
-					(recognizer.velocity > 0)? NSLog(@"zoom in"): [self zoomify: zoomOut];
+					(recognizer.velocity > 0)? nil : [self zoomify: zoomOut];
 				}				
 			}
 		}break;

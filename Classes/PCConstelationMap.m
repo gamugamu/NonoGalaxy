@@ -26,6 +26,7 @@
 #import "CCFlash.h"
 #import "TimeInfo.h"
 #import "GGTracks.h"
+#import "PCSkinTempProvider.h"
 #import <objc/runtime.h>
 
 @interface PCDrawedItinerary : CCNode{
@@ -154,8 +155,14 @@
 							 retainedData: &_stagesData 
 								   lenght: &totalStages];
     
+#if REMPLACESKINLOCAL == 1
+    NSString* color = nil;
+    [PCSkinTempProvider replaceColorWithTempColor: nil subColor: &color];
+    [self setUpBackGround: color];
+#else
 	[self setUpBackGround: [info valueForKey: mapInfoSubBagroundColor]];
-	[self set_mapName: constelationName];
+#endif
+    [self set_mapName: constelationName];
 	[self addChild: _mapDraws];
 	[self set_mapEngine: [PCConstelationMapEngine engineWithConstelationName: constelationName mapSize: mapSize linker: linkerLayer]];
 	[self addMap: stagelayer constelationName: constelationName returnedAccessSet: &accessible returnedInaccessSet: &inaccessible];

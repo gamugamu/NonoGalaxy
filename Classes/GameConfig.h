@@ -16,6 +16,11 @@
 //		CCDirector
 //
 
+#if IS_LOG_DISBABLED == 1
+    #define NSLog if(1) NSLog
+    #define printf if(1) printf
+#endif
+
 #define USETEMPSKIN
 
 #define kGameAutorotationNone 0
@@ -35,7 +40,11 @@
 #define PCDEBUG_FILESUNZIPPING 0 // check if the tmx files are conform to the logic game
 
 //#define PCDEBUG_CONSTELATIONMAP 1 // pour afficher les tracés des maps, et faire un check si tout les éléments sont là
-#define PCDEBUG_DISABLESOUND	1 // pour ne pas installer le osn
+#if IS_SERVER_MODE == 1
+    #define PCDEBUG_DISABLESOUND	0
+#else
+    #define PCDEBUG_DISABLESOUND	1 // pour ne pas installer le osn
+#endif
 
 #define IPHONEHEIGHT		768
 #define IPHONEWIDTH			1024

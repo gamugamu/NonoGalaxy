@@ -62,9 +62,11 @@
     if (!error && statusCode != 404) {
         NSDictionary *response = [[request responseString] JSONValue];
         // ! leaks. Juste bon pour les test. Pas de prod dessus.
-        *color       = [[response valueForKey: mapInfoBagroundColor] retain];
-        *subcolor    = [[response valueForKey: mapInfoSubBagroundColor] retain];
-        printf("---- indice remplacé\n");
+        if(color)
+            *color       = [[response valueForKey: mapInfoBagroundColor] retain];
+        if(subcolor)
+            *subcolor    = [[response valueForKey: mapInfoSubBagroundColor] retain];
+        printf("---- couleur remplacée\n");
     }else{
         printf("impossible de récupérer les données couleurs\n");
     }

@@ -49,12 +49,15 @@ NSLock *lock;
 #if (!PCDEBUG_DISABLESOUND)
 	if([GCMusicController sharedManager].state == kGSOkay){
 #endif
-        
-        NSLog(@"%@",  NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES));
-   // [self changeSceneAsync: @selector(homeScene)	withParams: nil];
+    
+#if IS_SERVER_MODE == 1
+    [self changeSceneAsync: @selector(homeScene)	withParams: nil];
+#else
     [self changeSceneAsync: @selector(galaxiesScene) withParams: nil];
-   // [self changeSceneAsync:@selector(constelationScene:)	withParams: [NSArray arrayWithObjects: @"constelation_006.tmx", nil]];
-   // [self changeSceneAsync:@selector(stageScene:)			withParams: [NSArray arrayWithObjects: @"constelation_005.tmx", [NSNumber numberWithInt: 15], nil]];
+    // [self changeSceneAsync:@selector(constelationScene:)	withParams: [NSArray arrayWithObjects: @"constelation_006.tmx", nil]];
+    // [self changeSceneAsync:@selector(stageScene:)			withParams: [NSArray arrayWithObjects: @"constelation_005.tmx", [NSNumber numberWithInt: 15], nil]];
+#endif
+   
 #if (!PCDEBUG_DISABLESOUND)
     }
 #endif

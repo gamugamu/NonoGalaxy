@@ -38,8 +38,6 @@
 	if(self = [super init]){
 		delegate = delegate_;
         self.loadingDone = loadingDone;
-        
-		[self addChild: [CCColorLayer layerWithColor:ccc4(250, 250, 250, 250) width:50 height:50]];
 	}
 	return self;
 }

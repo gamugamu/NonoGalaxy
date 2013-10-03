@@ -78,8 +78,9 @@
 #endif
 
 	[director setAnimationInterval:1/60];
+#if IS_SERVER_MODE != 1
 	[director setDisplayFPS:YES];
-	
+#endif
 	
 	// make the OpenGLView a child of the view controller
 	[viewController setView:glView];
