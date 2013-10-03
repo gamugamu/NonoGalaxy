@@ -45,7 +45,7 @@ NSLock *lock;
 	CCScene* startScene = [[CCScene alloc] init];
 	[[CCDirector sharedDirector] runWithScene: startScene];
 	[startScene release];
-
+    
 #if (!PCDEBUG_DISABLESOUND)
 	if([GCMusicController sharedManager].state == kGSOkay){
 #endif

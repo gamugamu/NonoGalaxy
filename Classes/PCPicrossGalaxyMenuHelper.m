@@ -59,7 +59,6 @@
 		NSUInteger		newIdx				= [PCNameFormater retrieveIdxFromZipName: mapName];
 		NSString*		fileName			= [filemanager getDisplayStageForIdx: newIdx];
 		CCTexture2D*	tex					= [[CCTextureCache sharedTextureCache] addImage: fileName];
-		NSDictionary*	info				= [filemanager infoFromIndexedMap: newIdx];
 		NSString*		keys				= [NSString stringWithFormat:@"Nono_Message_NewMapAdded_%u", (count++)? count % 2 + 1 : 0];
 		NSString*		dyMessage			= NSLocalizedString(keys, nil);
 		NSString*		message				= dyMessage;

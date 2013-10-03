@@ -14,6 +14,7 @@ typedef enum {
 	nonoMapDisplay,
 	nonoSkin,
 	nonoDisplayFolder,
+    nonoNumbers
 }nonoFileType;
 
 @interface PCNameFormater : NSObject

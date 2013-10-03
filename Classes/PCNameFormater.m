@@ -36,6 +36,8 @@
 			name = [NSString stringWithFormat:@"%@%@.png", FORMATskin, sserial];			break;
 		case nonoDisplayFolder:
 			name = [NSString stringWithFormat:@"%@%@", FOLDERstageDisplay, sserial];		break;
+        case nonoNumbers:
+			name = [NSString stringWithFormat:@"%@%@.png", FORMATIndice, sserial];              break;
 	}
 	
 	return name;

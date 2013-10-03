@@ -17,8 +17,8 @@
 //
 
 #if IS_LOG_DISBABLED == 1
-    #define NSLog if(1) NSLog
-    #define printf if(1) printf
+    #define NSLog if(0) NSLog
+    #define printf if(0) printf
 #endif
 
 #define USETEMPSKIN

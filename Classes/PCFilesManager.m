@@ -286,7 +286,7 @@
 				
 				for (int i = 0; i <= nonoSkin; i++) {
 					NSString* tmpFile	= [PCNameFormater getNameFromSerialisation: serialisedUint forType: i];
-					
+
 					[fileManager moveItemAtPath: [unzipFilesPath stringByAppendingPathComponent: tmpFile]
 										 toPath: [[GGPrivateDoc privateDocsDirectory: folderList[i]] stringByAppendingPathComponent: tmpFile]
 										  error: &copyError];
@@ -296,6 +296,13 @@
                     }
 				}
 				
+                // on rajoute les indices si jamais la carte en possède.
+                NSString* tmpFile	= [PCNameFormater getNameFromSerialisation: serialisedUint forType: nonoNumbers];
+
+                [fileManager moveItemAtPath: [unzipFilesPath stringByAppendingPathComponent: tmpFile]
+                                     toPath: [[GGPrivateDoc privateDocsDirectory: FOLDERIndice] stringByAppendingPathComponent: tmpFile]
+                                      error: nil];
+                
 				// on récupère enfin tout les stages display
 				NSArray* list				= [fileManager contentsOfDirectoryAtPath: unzipFilesPath error: &copyError];
 				NSString* mapDisplayfolder	= [PCNameFormater getNameFromSerialisation: serialisedUint forType: nonoDisplayFolder];
