@@ -62,7 +62,7 @@
 		NSDictionary*	info				= [filemanager infoFromIndexedMap: newIdx];
 		NSString*		keys				= [NSString stringWithFormat:@"Nono_Message_NewMapAdded_%u", (count++)? count % 2 + 1 : 0];
 		NSString*		dyMessage			= NSLocalizedString(keys, nil);
-		NSString*		message				= [NSString stringWithFormat: @"%@%@", dyMessage, [info valueForKey: @"constelationName"]];
+		NSString*		message				= dyMessage;
 						newMap.texture		= tex;
 						newMap.position		= ccp(300, 450);
 						newMap.textureRect	= (CGRect){{0,0}, tex.contentSize};

@@ -1,7 +1,7 @@
-Nono_Message_NewMapAdded_0              = "Regarde, une nouvelle carte:\n";
-Nono_Message_NewMapAdded_1              = "J'ai trouvé ça aussi:\n";
-Nono_Message_NewMapAdded_2              = "Une autre:\n";
-Nono_Message_NewMapAdded_3              = "Ouais! Egalement ça:\n";
+Nono_Message_NewMapAdded_0              = "Regarde, une nouvelle carte\n";
+Nono_Message_NewMapAdded_1              = "J'ai trouvé ça aussi\n";
+Nono_Message_NewMapAdded_2              = "Une autre\n";
+Nono_Message_NewMapAdded_3              = "Ouais! Egalement ça\n";
 Nono_Message_NewMapAdded_Done           = "C'est parti !!!";
 
 Nono_isCheking                          = "Ok, voyons voir...";
