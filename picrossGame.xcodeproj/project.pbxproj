@@ -159,7 +159,6 @@
 		79961C27146C976A0042A83F /* Trans.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79961C25146C976A0042A83F /* Trans.plist */; };
 		79961C28146C976A0042A83F /* Trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 79961C26146C976A0042A83F /* Trans.png */; };
 		7996EF5B126875C80013BFDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7996EF59126875C80013BFDC /* Default.png */; };
-		7996EF5C126875C80013BFDC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7996EF5A126875C80013BFDC /* Default@2x.png */; };
 		7996EF87126876330013BFDC /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7996EF61126876330013BFDC /* ColoredCircleSprite.m */; };
 		7996EF88126876330013BFDC /* PadButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 7996EF64126876330013BFDC /* PadButtons.m */; };
 		7996EF89126876330013BFDC /* ButtonSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7996EF66126876330013BFDC /* ButtonSkin.m */; };
@@ -204,7 +203,6 @@
 		799E64DB1428B0B6006AA16C /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 799E64D41428B0B6006AA16C /* zip.c */; };
 		799E64DC1428B0B6006AA16C /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 799E64D71428B0B6006AA16C /* ZipArchive.m */; };
 		799E98D2144433DF00E356A4 /* PCTutorialPicrossGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 799E98D1144433DF00E356A4 /* PCTutorialPicrossGame.m */; };
-		799E98D4144437AA00E356A4 /* PCtutorials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 799E98D3144437AA00E356A4 /* PCtutorials.plist */; };
 		79A0132514138FA700B5537F /* PCNameFormater.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A0132414138FA700B5537F /* PCNameFormater.m */; };
 		79A028AA1452AE2200238951 /* PCLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A028A91452AE2200238951 /* PCLoader.m */; };
 		79A062441423921800B01EB1 /* stik_cro.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A062421423921800B01EB1 /* stik_cro.png */; };
@@ -334,12 +332,14 @@
 		D358F11617F9D832001DD8C7 /* GGRateMe.m in Sources */ = {isa = PBXBuildFile; fileRef = D358F11517F9D832001DD8C7 /* GGRateMe.m */; };
 		D358F11917F9D86C001DD8C7 /* GGarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = D358F11817F9D86C001DD8C7 /* GGarchiver.m */; };
 		D358F11B17F9D932001DD8C7 /* ReviewMe.plist in Resources */ = {isa = PBXBuildFile; fileRef = D358F11A17F9D932001DD8C7 /* ReviewMe.plist */; };
+		D36960FC17FEB97500A13502 /* Default~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D36960FB17FEB97500A13502 /* Default~ipad.png */; };
+		D369610417FEF70300A13502 /* tutoPics.plist in Resources */ = {isa = PBXBuildFile; fileRef = D369610317FEF70300A13502 /* tutoPics.plist */; };
+		D369610517FEF71800A13502 /* PCtutorials.plist in Resources */ = {isa = PBXBuildFile; fileRef = D369610717FEF71800A13502 /* PCtutorials.plist */; };
 		D37CCCD217F861C0007BBE01 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D37CCCD417F861C0007BBE01 /* Localizable.strings */; };
 		D39F69C51764C2050072EEE5 /* PCConstelationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F69C41764C2050072EEE5 /* PCConstelationInfo.m */; };
 		D3C80C9D16EF100300031A85 /* PCHomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C80C9C16EF100300031A85 /* PCHomePage.m */; };
 		D3C80CA016EF131C00031A85 /* button_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D3C80C9F16EF131C00031A85 /* button_start.png */; };
 		D3C80CA216EFC21200031A85 /* homePage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3C80CA116EFC21100031A85 /* homePage.jpg */; };
-		D3D335EF163D977B004062FB /* tutoPics.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3D335ED163D977B004062FB /* tutoPics.plist */; };
 		D3D335F0163D977B004062FB /* tutoPics.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D335EE163D977B004062FB /* tutoPics.png */; };
 		D3D335F3163D9EF0004062FB /* FntProvi_25.fnt in Resources */ = {isa = PBXBuildFile; fileRef = D3D335F1163D9EF0004062FB /* FntProvi_25.fnt */; };
 		D3D335F4163D9EF0004062FB /* FntProvi_25.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D335F2163D9EF0004062FB /* FntProvi_25.png */; };
@@ -739,7 +739,6 @@
 		79961C25146C976A0042A83F /* Trans.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Trans.plist; sourceTree = "<group>"; };
 		79961C26146C976A0042A83F /* Trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trans.png; sourceTree = "<group>"; };
 		7996EF59126875C80013BFDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		7996EF5A126875C80013BFDC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7996EF60126876330013BFDC /* ColoredCircleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredCircleSprite.h; sourceTree = "<group>"; };
 		7996EF61126876330013BFDC /* ColoredCircleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredCircleSprite.m; sourceTree = "<group>"; };
 		7996EF63126876330013BFDC /* PadButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadButtons.h; sourceTree = "<group>"; };
@@ -815,7 +814,6 @@
 		799E64D71428B0B6006AA16C /* ZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipArchive.m; sourceTree = "<group>"; };
 		799E98D0144433DF00E356A4 /* PCTutorialPicrossGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTutorialPicrossGame.h; sourceTree = "<group>"; };
 		799E98D1144433DF00E356A4 /* PCTutorialPicrossGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTutorialPicrossGame.m; sourceTree = "<group>"; };
-		799E98D3144437AA00E356A4 /* PCtutorials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PCtutorials.plist; sourceTree = "<group>"; };
 		79A0132314138FA700B5537F /* PCNameFormater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCNameFormater.h; sourceTree = "<group>"; };
 		79A0132414138FA700B5537F /* PCNameFormater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCNameFormater.m; sourceTree = "<group>"; };
 		79A028A81452AE2200238951 /* PCLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLoader.h; sourceTree = "<group>"; };
@@ -1004,6 +1002,11 @@
 		D358F11717F9D86C001DD8C7 /* GGarchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGarchiver.h; sourceTree = "<group>"; };
 		D358F11817F9D86C001DD8C7 /* GGarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGarchiver.m; sourceTree = "<group>"; };
 		D358F11A17F9D932001DD8C7 /* ReviewMe.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ReviewMe.plist; sourceTree = "<group>"; };
+		D36960FB17FEB97500A13502 /* Default~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~ipad.png"; sourceTree = "<group>"; };
+		D369610317FEF70300A13502 /* tutoPics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tutoPics.plist; sourceTree = "<group>"; };
+		D369610617FEF71800A13502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/PCtutorials.plist; sourceTree = "<group>"; };
+		D369610817FEF71E00A13502 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/PCtutorials.plist; sourceTree = "<group>"; };
+		D369610917FEF71F00A13502 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/PCtutorials.plist; sourceTree = "<group>"; };
 		D37CCCD517F861C8007BBE01 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D37CCCD717F86445007BBE01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D37CCCD817F86458007BBE01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1013,7 +1016,6 @@
 		D3C80C9C16EF100300031A85 /* PCHomePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCHomePage.m; sourceTree = "<group>"; };
 		D3C80C9F16EF131C00031A85 /* button_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_start.png; sourceTree = "<group>"; };
 		D3C80CA116EFC21100031A85 /* homePage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = homePage.jpg; sourceTree = "<group>"; };
-		D3D335ED163D977B004062FB /* tutoPics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tutoPics.plist; sourceTree = "<group>"; };
 		D3D335EE163D977B004062FB /* tutoPics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutoPics.png; sourceTree = "<group>"; };
 		D3D335F1163D9EF0004062FB /* FntProvi_25.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FntProvi_25.fnt; sourceTree = "<group>"; };
 		D3D335F2163D9EF0004062FB /* FntProvi_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FntProvi_25.png; sourceTree = "<group>"; };
@@ -1489,7 +1491,7 @@
 		792C020A1445A733000479F7 /* tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				D3D335ED163D977B004062FB /* tutoPics.plist */,
+				D369610317FEF70300A13502 /* tutoPics.plist */,
 				D3D335EE163D977B004062FB /* tutoPics.png */,
 			);
 			name = tutorial;
@@ -1954,7 +1956,7 @@
 				7916B6071444A82E00C1427E /* PCTutoStageBoard.m */,
 				7916B6021444A2C500C1427E /* PCTutoAnimator.h */,
 				7916B6031444A2C600C1427E /* PCTutoAnimator.m */,
-				799E98D3144437AA00E356A4 /* PCtutorials.plist */,
+				D369610717FEF71800A13502 /* PCtutorials.plist */,
 				7916B5FF144471F000C1427E /* PCDialogue.h */,
 				7916B600144471F000C1427E /* PCDialogue.m */,
 				D3EA9B28163E55AB00BEB04C /* PCTutoEffectHint.h */,
@@ -2313,7 +2315,7 @@
 			children = (
 				50F414ED1069373D002A0D5E /* fps_images.png */,
 				7996EF59126875C80013BFDC /* Default.png */,
-				7996EF5A126875C80013BFDC /* Default@2x.png */,
+				D36960FB17FEB97500A13502 /* Default~ipad.png */,
 			);
 			name = default;
 			sourceTree = "<group>";
@@ -2809,7 +2811,6 @@
 			files = (
 				50F414F11069373D002A0D5E /* fps_images.png in Resources */,
 				7996EF5B126875C80013BFDC /* Default.png in Resources */,
-				7996EF5C126875C80013BFDC /* Default@2x.png in Resources */,
 				7996F01F12687B580013BFDC /* cursor.png in Resources */,
 				7985096513547EB8005172BB /* mask.tmx in Resources */,
 				7985096713547F44005172BB /* upHint.tmx in Resources */,
@@ -2858,7 +2859,7 @@
 				79A53FAB14273A0000384E64 /* fingerState.png in Resources */,
 				79983BBD1431C3C0003967D0 /* binariTile.png in Resources */,
 				79F0BB121432032300DD4ADC /* PCBasicData.plist in Resources */,
-				799E98D4144437AA00E356A4 /* PCtutorials.plist in Resources */,
+				D369610517FEF71800A13502 /* PCtutorials.plist in Resources */,
 				79AE2BE7144590F7003CA3D6 /* FntProviBlk_25.fnt in Resources */,
 				79AE2BE8144590F7003CA3D6 /* FntProviBlk_25.png in Resources */,
 				799B5815145168C5000A00A0 /* nonoInMap.mp3 in Resources */,
@@ -2867,6 +2868,7 @@
 				79961C27146C976A0042A83F /* Trans.plist in Resources */,
 				79961C28146C976A0042A83F /* Trans.png in Resources */,
 				7918FF2B146ED7DD00695922 /* alpha0_btn.png in Resources */,
+				D369610417FEF70300A13502 /* tutoPics.plist in Resources */,
 				79AC9431146EF9BA00C1B177 /* FntHooge_12.fnt in Resources */,
 				79AC9432146EF9BA00C1B177 /* FntHooge_12.png in Resources */,
 				79AC9441146F1FD400C1B177 /* infoLvl.png in Resources */,
@@ -2938,6 +2940,7 @@
 				7922594D15E1261800D922F4 /* galax_04.png in Resources */,
 				7922595115E131E800D922F4 /* backgroundStage.plist in Resources */,
 				7922595215E131E800D922F4 /* backgroundStage.png in Resources */,
+				D36960FC17FEB97500A13502 /* Default~ipad.png in Resources */,
 				7922595315E131E800D922F4 /* stars-hd_06.png in Resources */,
 				7922595615E1488D00D922F4 /* btn_info-hd.png in Resources */,
 				7922595715E1488D00D922F4 /* btn_info.png in Resources */,
@@ -2959,7 +2962,6 @@
 				D32A7FB9163419C500458741 /* FntSnow_40.png in Resources */,
 				D314D80B163A57D200463A00 /* btn_tutleft.png in Resources */,
 				D314D80C163A57D200463A00 /* btn_tutRight.png in Resources */,
-				D3D335EF163D977B004062FB /* tutoPics.plist in Resources */,
 				D3D335F0163D977B004062FB /* tutoPics.png in Resources */,
 				D3D335F3163D9EF0004062FB /* FntProvi_25.fnt in Resources */,
 				D3D335F4163D9EF0004062FB /* FntProvi_25.png in Resources */,
@@ -3224,6 +3226,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D369610717FEF71800A13502 /* PCtutorials.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D369610617FEF71800A13502 /* Base */,
+				D369610817FEF71E00A13502 /* fr */,
+				D369610917FEF71F00A13502 /* en */,
+			);
+			name = PCtutorials.plist;
+			sourceTree = "<group>";
+		};
 		D37CCCD417F861C0007BBE01 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3263,7 +3275,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DerivedData/picrossGame/Build/Products/Debug-iphonesimulator\"",
@@ -3313,7 +3325,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DerivedData/picrossGame/Build/Products/Debug-iphonesimulator\"",
@@ -3444,7 +3456,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DerivedData/picrossGame/Build/Products/Debug-iphonesimulator\"",

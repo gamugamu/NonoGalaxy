@@ -53,8 +53,8 @@ NSLock *lock;
 #if IS_SERVER_MODE == 1
     [self changeSceneAsync: @selector(homeScene)	withParams: nil];
 #else
-    [self changeSceneAsync: @selector(galaxiesScene) withParams: nil];
-    // [self changeSceneAsync:@selector(constelationScene:)	withParams: [NSArray arrayWithObjects: @"constelation_006.tmx", nil]];
+    //[self changeSceneAsync: @selector(galaxiesScene) withParams: nil];
+     [self changeSceneAsync:@selector(constelationScene:)	withParams: [NSArray arrayWithObjects: @"constelation_001.tmx", nil]];
     // [self changeSceneAsync:@selector(stageScene:)			withParams: [NSArray arrayWithObjects: @"constelation_005.tmx", [NSNumber numberWithInt: 15], nil]];
 #endif
    

@@ -136,7 +136,7 @@
 	CCNode* bubbleInApp						= [CCSprite spriteWithSpriteFrameName: bubbleInAppPropose];
 	CCLabelBMFontMultiline* messageInapp	= [CCLabelBMFontMultiline labelWithString: nil fntFile: @"FntSnow_28w.fnt" width: 200 alignment: RightAlignment];
 	// CCLabelTTF parce qu'avec les localisations, on peut avoir plus de 8000 charactères. Un BmFont, n'a plus aucun intérêt
-	CCLabelTTF *messagePrice				= [CCLabelTTF labelWithString: nil dimensions:CGSizeMake(400, 100) alignment:UITextAlignmentLeft  fontName: @"Arial Rounded MT Bold" fontSize:70];
+	CCLabelTTF *messagePrice				= [CCLabelTTF labelWithString: nil dimensions:CGSizeMake(400, 100) alignment: UITextAlignmentLeft  fontName: @"Arial Rounded MT Bold" fontSize:70];
 	CCLabelBMFontMultiline *priceExplanation			= [CCLabelBMFontMultiline labelWithString: NSLocalizedString(@"Nono_priceExpl", nil)
                                                                      fntFile: @"Fntsnow_22.fnt"
                                                                        width: 600

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tutorial_0</key>
+	<array>
+		<string>Welcome into NonoGalaxy!\nHere i will teach you the rule of the game.\nDon&apos;t panic, this is 5 minutes long!</string>
+		<string>The goal is to  discover the pattern hidden beyond the puzzle. For this, you must solve the right numbers of boxes to fill on each line.</string>
+		<string>Each clues on the border side of the grid marks the number of adjacent cells to fill ...</string>
+		<integer>1</integer>
+		<string>for example: \n&quot;5&quot; means there is some 5 adjacent cells to fill.&quot;2&quot; and &quot;1&quot; means there are two adjacents cells, no more...</string>
+		<integer>2</integer>
+		<string>this is true for horizontal lines as for vetical lines...</string>
+		<integer>2</integer>
+		<string>of course, thoses clues point to the right number of cellls to fill, but not precisely where they are on the grid line!...</string>
+		<integer>3</integer>
+		<string>For that, you need to cross the clues and you will be able to solve the puzzle.</string>
+		<integer>3</integer>
+		<string>Let&apos;s start by the most obvious: This line has a &apos;5&apos; clue. As the line is made of 5 cells, we know that all the line can be filled.</string>
+		<integer>4</integer>
+		<string>Look, all the solved clues became clearer! Solving the &quot;5&quot; line solved also the 3 others line with a &quot;1&quot; clue.</string>
+		<integer>5</integer>
+		<string>Now it&apos;s your time to try. The last horizontal line indicates a &quot;3&quot; clue...</string>
+		<string>The two cells at the extremity cannot be filled. Filling the three cells on the middle is the only solution...</string>
+		<string>To fill a cell, press it and lift up your finger for activating it. Don&apos;t be afraid, try it !</string>
+		<integer>6</integer>
+		<string>Bravo! you have solved the line puzzle. Look, the clue for the line has been cleared up. We are good !</string>
+		<string>There are some methods in order to fill the cells faster, but before,  there is something important I need to talk to you...</string>
+		<string>there is the &quot;FILL&quot; button, to fill the cells. This is what you did... </string>
+		<string>but there is also the &quot;CROSS&quot; button, in order to tick the cells when you know there are blank...</string>
+		<integer>7</integer>
+		<string>You can always undo a ticked cell.</string>
+		<integer>8</integer>
+		<string>Now try to tick this cell.</string>
+		<integer>9</integer>
+		<string>Look, ticking this cell, the clue became clearer. This is because the cell has been &quot;isolated&quot;...</string>
+		<integer>10</integer>
+		<string>This king of information is precious while playing. Don&apos;t hesitate to use it!</string>
+		<string>The puzzle is close to be solved. There is only one cell to fill. Thine honor!</string>
+		<integer>11</integer>
+		<string>Bravo, you know the rule basis. In the next  section i will explain you some usefull tips.</string>
+		<integer>12</integer>
+		<string></string>
+		<integer>13</integer>
+	</array>
+	<key>tutorial_2</key>
+	<array>
+		<string>Sometimes you will find that some puzzle have not obvious solutions...</string>
+		<string>There is a tips I like to use and who works everytime.</string>
+		<string>Using the technic &apos;Simple boxes&apos;, you can find new cells to fill.</string>
+		<string>When you enumerate all the possibility, there are some cells who are always filled, no matter what.</string>
+		<integer>1</integer>
+		<string>Look here, there are 4 cells for 5 who are fillable. We can deduce then that the 3 milddle cells are necessarily fillable.</string>
+		<integer>2</integer>
+		<string>That is always working, as the length of the filled cells is greater than the half of the table. As this series of three.</string>
+		<integer>3</integer>
+		<string>Once you have clarified certain aspects of the puzzle, the rest becomes alot easier.</string>
+		<string>Now you know the technique &quot;Single Box&quot;! Use it as soon as you&apos;re stuck in a puzzle.</string>
+		<string>And now, you can face the NonoGalaxy world without fear !</string>
+		<string>Know that there are lots of different tips in order to progress in a challenging puzzle.</string>
+		<string>Be smart, and find your own tips ! good luck</string>
+		<integer>4</integer>
+	</array>
+	<key>tutorial_1</key>
+	<array>
+		<string>Now it&apos;s time to show you some techniques very useful.</string>
+		<string>When you met a series of cells, to go faster, you can do them all at once ...</string>
+		<string>To do this, drag your finger along the cells that you want to transform, and raise the finger to activate the selection.</string>
+		<integer>1</integer>
+		<string>Try this here. Slide your finger along the line. And fill all the cells at once.</string>
+		<integer>2</integer>
+		<string>Congratulations! Know that once you put your finger on the board, nothing is definite ...</string>
+		<string>you can always undo what you have selected by placing a second finger on the touch screen.</string>
+		<integer>3</integer>
+		<string>Understood? A finger to turn the cell, two fingers cancel the selection.</string>
+		<string>As long as your finger is not raised up, you can always change if you think you made a mistake.</string>
+		<string>Now it&apos;s your turn to try a cancelation. Touch any cell, and then cancel it with a second finger.</string>
+		<integer>4</integer>
+		<string>Now you know almost everything you need to play NonoGalaxy.</string>
+		<string>Good luck!</string>
+		<integer>5</integer>
+	</array>
+	<key>tutorial_3</key>
+	<array>
+		<string>Now you&apos;re old enough to manage this puzzle alone.</string>
+		<string>I&apos;ll let you apply everything I taught you so far.</string>
+		<string>And do not forget, try to be the more methodical possible, each puzzle has its own solution!</string>
+		<string>Good luck!</string>
+		<integer>1</integer>
+	</array>
+</dict>
+</plist>

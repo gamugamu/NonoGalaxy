@@ -18,9 +18,9 @@ Nono_displayPrice                       = "this map cost";
 Nono_priceExpl                          = "Une fois cette carte achetée, tu l'as possèdes pour toujours.\n Tu peux la retélécharger ensuite gratuitement sur AppStore";
 Nono_mapHasBeenPaid                     = "congratulation";
 Nono_errorMapPaid                       = "hu error"; //"this store id seems invalid, refert to the developper";
-Nono_errorTimeOut                       = "sorry, the request is too long. Invalidate";
+Nono_errorTimeOut                       = "sorry, the request is too long. Canceled";
 Nono_errorOccured                       = "ha an error occured";
-Nono_ReceiveResponse                    = "ha request Received Response";
+Nono_ReceiveResponse                    = "ha request received Response";
 Nono_letsCheck                          = "is it Working?";
 
 Nono_mapSucceed                         = "Congratulation\n You did it !";
