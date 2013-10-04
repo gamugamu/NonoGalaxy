@@ -425,7 +425,7 @@ static bool shouldAnimateConstelationCompleted = NO;
 															 target: self
 														   selector: @selector(backPressed)];
 	CCMenu* btn		= [CCMenu menuWithItems: btnS, nil];
-	btn.position	= ccp(185, 760);
+	btn.position	= ccp(185, 720);
 	[self addChild: btn z:0 tag: PCGXBTNTAG];
 }
 
