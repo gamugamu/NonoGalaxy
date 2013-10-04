@@ -24,7 +24,7 @@
 
 - (void) applicationDidFinishLaunching:(UIApplication*)application{
     // Google analytics
-    //[GGTracks initializeTracks];
+    [GGTracks initializeTracks];
     
 #if (!PCDEBUG_DISABLESOUND)
 	//Kick off sound initialisation, this will happen in a separate thread
